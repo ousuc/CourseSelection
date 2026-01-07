@@ -12,14 +12,30 @@ public:
     TeachingTaskBroker(DataBroker* db);
     ~TeachingTaskBroker();
 
-    bool saveTask(TeachingTask* TeachingTask);
-    TeachingTask* findTaskById(std::string id);
+    bool saveTask(TeachingTask* teachingTask);
+    TeachingTask* findTaskById(const std::string& id);
 
-    bool addStudentToTask(std::string taskId,std::string studentId);
-    bool assignTeacherToTask(std::string taskId, std::string teacherId);
+    bool addStudentToTask(const std::string& taskId,const std::string& studentId);
+    bool assignTeacherToTask(const std::string& taskId, const std::string& teacherId);
 private:
     DataBroker* db;
-    std::string tableName;
+    const std::string& tableName;
 };
 
+TeachingTaskBroker::TeachingTaskBroker(DataBroker* db):
+    db(db),tableName("teaching_tasks")
+{}
+
+bool TeachingTaskBroker::saveTask(TeachingTask* teachingTask)
+{   
+}
+
+TeachingTask* findTaskById(const std::string& id)
+{}
+
+bool addStudentToTask(const std::string& taskId, const std::string& studentId)
+{}
+
+bool assignTeacherToTask(const string& taskId, const std::string& teacherId)
+{}
 

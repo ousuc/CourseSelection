@@ -14,15 +14,37 @@ public:
 
     bool saveTeacher(Teacher* student);
 
-    Teacher* findTeacherById(std::string id);
+    Teacher* findTeacherById(const std::string& id);
 
-    bool assignToCourse(std::string teacherId, std::string courseId);
+    bool assignToCourse(const std::string& teacherId,const  std::string& courseId);
 
-    bool inputStudentGrade(std::string teacherId, std::string studetnId, double grade);
+    bool inputStudentGrade(const std::string& teacherId,const std::string& studetnId, double grade);
 
 private:
     DataBroker* db;
     std::string tableName;
 };
+TeacherBroker::TeacherBroker(DataBroker* db):
+        db(db),tableName("teachers")
+{}
 
+bool TeacherBroker::inputStudentGrade(const std::string& teacherId, const std::string& studentId, double grade)
+{
+
+}
+
+bool TeacherBroker::assignToCourse(const std::string& teacherId, const std::string& courseId)
+{
+
+}
+
+Teacher* TeacherBroker::findTeacherById(const std::string& id)
+{
+
+}
+
+bool TeacherBroker::saveTeacher(Teacher* teacher)
+{
+    // todo: 将这个插入到老师表中 ，实战应该不会使用，已经会填写一些测试数据
+}
 
