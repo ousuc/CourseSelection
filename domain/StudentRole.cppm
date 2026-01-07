@@ -5,10 +5,11 @@ using std::string;
 using std::vector;
 export class StudentRole: public Role{
 public:
-    StudentRole(string id,string name,string gender,float currentGPA,vector<string> vec);
+    StudentRole(string id,string name,string gender);
     virtual string getRoleType();
-    //选课前检查检查时间冲突
-    bool canEnroll(const string& newTime,const vector<string>& enrolledTime);
+
+
+    bool canEnroll(const string& newTime,const vector<string>& enrolledTime);    //选课前检查检查时间冲突
     bool hasTask(string taskId); //是否选了某门课
     bool enrollInTask(string taskId);     // 选课
     bool dropTask(string taskId);              // 退课
@@ -16,8 +17,8 @@ private:
     vector<string> enrolledTasksId;  // 已选课程，用于用于时间冲突检查和课程管理
 };
 
-StudentRole::StudentRole(string id,string name,string gender,float currentGPA,vector<string> vec)
-:Role(id,name,gender),enrolledTasksId(vec)
+StudentRole::StudentRole(string id,string name,string gender)
+:Role(id,name,gender)
 {}
 
 string StudentRole::getRoleType(){

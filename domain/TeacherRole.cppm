@@ -3,7 +3,7 @@ import std;
 import role;
 using std::map;
 using std::string;
-class GradeRecord{
+export class GradeRecord{
 public:
     string studentId;
     string taskId;
