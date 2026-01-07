@@ -14,16 +14,16 @@ using std::vector;
 using std::string;
 
 export class CourseController {
-private:
-    CourseBroker* courseBroker;
-    TeachingTaskBroker* taskBroker;
-    StudentBroker* studentBroker;
 public:
     CourseController(CourseBroker* cBroker, TeachingTaskBroker* tBroker, StudentBroker* sBroker);
     Course* getCourseDetails(const string& courseId);
     vector<TeachingTask*> getCourseTasks(const string& courseId);
     vector<Student*> getTaskStudents(const string& taskId);
     bool isCourseActive(const string& courseId);
+private:
+    CourseBroker* courseBroker;
+    TeachingTaskBroker* taskBroker;
+    StudentBroker* studentBroker;
 };
 
 CourseController::CourseController(CourseBroker* cBroker, TeachingTaskBroker* tBroker, StudentBroker* sBroker)

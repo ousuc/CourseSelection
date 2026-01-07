@@ -12,12 +12,6 @@ using std::vector;
 using std::string;
 
 export class TaskCreationRequest {
-private:
-    string courseId;
-    string teacherId;
-    string classroom;
-    string schedule;
-    int maxCapacity;
 public:
     TaskCreationRequest(const string& cid, const string& tid, const string& cls, const string& sch, int cap);
     string getCourseId() const;
@@ -25,15 +19,15 @@ public:
     string getClassroom() const;
     string getSchedule() const;
     int getMaxCapacity() const;
+private:
+    string courseId;
+    string teacherId;
+    string classroom;
+    string schedule;
+    int maxCapacity;
 };
 
 export class GradeSubmission {
-private:
-    string teacherId;
-    string studentId;
-    string taskId;
-    float score;
-    string comment;
 public:
     GradeSubmission(const string& tid, const string& sid, const string& tskid, float s, const string& com = "");
     string getTeacherId() const;
@@ -41,6 +35,12 @@ public:
     string getTaskId() const;
     float getScore() const;
     string getComment() const;
+private:
+    string teacherId;
+    string studentId;
+    string taskId;
+    float score;
+    string comment;
 };
 
 TaskCreationRequest::TaskCreationRequest(const string& cid, const string& tid, const string& cls, const string& sch, int cap)

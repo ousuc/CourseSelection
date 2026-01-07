@@ -14,10 +14,6 @@ using std::vector;
 using std::string;
 
 export class StudentController {
-private:
-    StudentBroker* studentBroker;
-    CourseBroker* courseBroker;
-    TeachingTaskBroker* taskBroker;
 public:
     StudentController(StudentBroker* sBroker, CourseBroker* cBroker, TeachingTaskBroker* tBroker);
     Student* getStudentProfile(const string& studentId);
@@ -25,6 +21,10 @@ public:
     bool enrollStudent(const string& studentId, const string& taskId);
     bool dropStudent(const string& studentId, const string& taskId);
     float calculateGPA(const string& studentId);
+private:
+    StudentBroker* studentBroker;
+    CourseBroker* courseBroker;
+    TeachingTaskBroker* taskBroker;
 };
 
 StudentController::StudentController(StudentBroker* sBroker, CourseBroker* cBroker, TeachingTaskBroker* tBroker)

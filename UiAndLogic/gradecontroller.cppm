@@ -15,10 +15,6 @@ using std::vector;
 using std::string;
 
 export class GradeController {
-private:
-    TeacherBroker* teacherBroker;
-    StudentBroker* studentBroker;
-    TeachingTaskBroker* taskBroker;
 public:
     GradeController(TeacherBroker* tBroker, StudentBroker* sBroker, TeachingTaskBroker* tskBroker);
     bool submitFinalGrade(const GradeSubmission& submission);
@@ -26,6 +22,10 @@ public:
     GradeRecord* getStudentTaskGrade(const string& studentId, const string& taskId);
     vector<GradeRecord*> getStudentAllGrades(const string& studentId);
     std::map<string, float> calculateTaskGradeStats(const string& taskId);
+private:
+    TeacherBroker* teacherBroker;
+    StudentBroker* studentBroker;
+    TeachingTaskBroker* taskBroker;
 };
 
 GradeController::GradeController(TeacherBroker* tBroker, StudentBroker* sBroker, TeachingTaskBroker* tskBroker)

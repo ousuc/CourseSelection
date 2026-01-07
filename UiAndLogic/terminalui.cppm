@@ -16,8 +16,6 @@ using std::vector;
 using std::string;
 
 export class TerminalUI {
-private:
-    MainController* mainController;
 public:
     TerminalUI(MainController* mc);
     void showMainMenu();
@@ -28,6 +26,8 @@ public:
     void displayError(const string& error);
     string getUserInput(const string& prompt);
     int getMenuSelection(int min, int max);
+private:
+    MainController* mainController;
 };
 
 TerminalUI::TerminalUI(MainController* mc) : mainController(mc) {}

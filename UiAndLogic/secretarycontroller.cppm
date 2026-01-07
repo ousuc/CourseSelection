@@ -14,12 +14,6 @@ using std::vector;
 using std::string;
 
 export class SecretaryController {
-private:
-    SecretaryRole* secretary;
-    CourseBroker* courseBroker;
-    TeacherBroker* teacherBroker;
-    TeachingTaskBroker* taskBroker;
-    DataBroker* dataBroker;
 public:
     SecretaryController(CourseBroker* cBroker, TeacherBroker* tBroker, TeachingTaskBroker* taskBroker, DataBroker* db);
     bool createCourse(Course* course);
@@ -27,6 +21,12 @@ public:
     bool activateCourse(const string& courseId);
     vector<Course*> getAllCourses();
     bool assignTeacherToTask(const string& taskId, const string& teacherId);
+private:
+    SecretaryRole* secretary;
+    CourseBroker* courseBroker;
+    TeacherBroker* teacherBroker;
+    TeachingTaskBroker* taskBroker;
+    DataBroker* dataBroker;
 };
 
 SecretaryController::SecretaryController(SecretaryRole* sec, CourseBroker* cBroker, TeacherBroker* tBroker, TeachingTaskBroker* tskBroker, DataBroker* db)
