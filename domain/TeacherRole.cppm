@@ -12,7 +12,6 @@ public:
     virtual string getRoleType();
     virtual string getSpecificId();
 private:
-    //~string teacherId;       // 工号，用于人事管理
     string department;      // 院系，用于课程分配
     vector<TeachingTask*> assignedTasks;  // 授课任务，用于工作量计算和时间安排
 

@@ -9,7 +9,6 @@ public:
     bool canEnroll(const string& newTime,const vector<string>& enrolledTime);
     bool enrollInTask(string taskId);     // 选课
     bool dropTask(string taskId);              // 退课
-    //float getGrade();
 
 
 };
