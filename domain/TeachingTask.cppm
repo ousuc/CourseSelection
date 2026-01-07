@@ -1,12 +1,11 @@
-export module TeachingTask;
+export module teachingTask;
 import std;
 using std::vector;
 using std::string;
 using std::println;
 export class TeachingTask{
 public:
-    TeachingTask(string taskId,string semester,string timeSlot,std::time_t enrollStart,
-    std::time_t enrollEnd,int maxCapacity);
+    TeachingTask(string taskId,string timeSlot,std::time_t enrollStart,std::time_t enrollEnd,int max);
 // 核心业务逻辑方法：
     bool isFull();                             // 容量检查
     bool isInEnrollTime();       //是否在选课时间内
@@ -14,13 +13,12 @@ public:
 
     bool addStudent(string studentId);     // 添加学生
     bool removeStudent(string studentId);      // 移除学生
-    bool assignTeacher(TeacherRole* teacher);  // 分配教师
+    bool assignTeacher(string teacherId);  // 分配教师
     bool hasTimeConflictWithOther(TeachingTask& other); // 与某个Task是否存在上课时间冲突
 
     string getInfo(); //
     string getTime(); //获取该课程的上课时间段
     string getId();
-};
 private:
     string taskId;
     string timeSlot;  //学期与上课时间段：格式要固定！！
@@ -35,10 +33,9 @@ private:
 };
 
 
-TeachingTask TeachingTask(string taskId,string timeSlot,std::time_t enrollStart,
+TeachingTask::TeachingTask(string taskId,string timeSlot,std::time_t enrollStart,
 std::time_t enrollEnd,int max)
-:taskId(taskId),timeSlot(timeSlot),
-enrollStart(enrollStart),enrollEnd(enrollEnd),maxCapacity(max),currentEnrolled(0)
+:taskId(taskId),timeSlot(timeSlot),enrollStart(enrollStart),enrollEnd(enrollEnd),maxCapacity(max),currentEnrolled(0)
 {}
 
 bool TeachingTask::isFull(){
@@ -46,7 +43,7 @@ bool TeachingTask::isFull(){
 }
 
 bool TeachingTask::isInEnrollTime(){
-    std::time_t now = time(nullptr);
+    std::time_t now = std::time(nullptr);
     return now >= enrollStart && now <= enrollEnd;
 }
 
@@ -68,7 +65,7 @@ bool TeachingTask::addStudent(string studentId) {
             return false;
         }
         if(!isInEnrollTime()){
-            println("不在该task选课时间段内！")
+            println("不在该task选课时间段内！");
             return false;
         }
         enrolledStudentIds.emplace_back(studentId);
@@ -91,7 +88,7 @@ bool TeachingTask::assignTeacher(string teacherId) {
     this->teacherId = teacherId;
     return true;
 }
-bool TeachingTask::hasTimeConflict(TeachingTask& other){
+bool TeachingTask::hasTimeConflictWithOther(TeachingTask& other){
     if (this == &other) return false;  // 不与自身冲突
     return timeSlot == other.timeSlot;
 }

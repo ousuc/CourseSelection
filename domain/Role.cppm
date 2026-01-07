@@ -1,6 +1,6 @@
-export module Role;
+export module role;
 import std;
-using std::sting;
+using std::string;
 export class Role{
 public:
     Role(string id,string name,string gender);

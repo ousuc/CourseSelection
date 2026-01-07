@@ -1,9 +1,10 @@
-export module TeacherRole;
+export module teacherRole;
 import std;
-import Role;
+import role;
 using std::map;
-using std::sting;
-struct GradeRecord{
+using std::string;
+class GradeRecord{
+public:
     string studentId;
     string taskId;
     float score;
@@ -18,6 +19,8 @@ public:
 private:
     map<string, GradeRecord> gradeRecords;
 };
+
+
 TeacherRole::TeacherRole(string id, string name, string gender)
     : Role(id, name, gender)
 {}
@@ -27,10 +30,12 @@ string TeacherRole::getRoleType(){
 bool TeacherRole::inputStudentGrade(const string& studentId, const string& taskId, float score) {
     // 简单的参数验证
     if (studentId.empty() || taskId.empty()) {
+        std::print("studentId/taskId 为空！\n");
         return false;
     }
 
     if (score < 0.0f || score > 100.0f){
+        std::print("输入的分数不在[0,100]内！\n");
         return false;  // 分数范围0-100
     }
 

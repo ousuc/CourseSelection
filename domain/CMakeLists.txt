@@ -11,8 +11,7 @@ project(domain LANGUAGES CXX)
 add_executable(domain
     #math.cpp                              # 模块实现单元
     main.cpp
-    TeachingTask.cppm
-    Course.cppm
+
 )
 
 set(MODULE_INTERFACE_FILES
@@ -22,9 +21,11 @@ set(MODULE_INTERFACE_FILES
     SecretaryRole.cppm
     StudentRole.cppm
     TeacherRole.cppm
+    TeachingTask.cppm
+    Course.cppm
 )
 
-source_group("Role_Modules" FILES ${MODULE_INTERFACE_FILES})
+source_group("Modules" FILES ${MODULE_INTERFACE_FILES})
 target_sources(domain  PRIVATE FILE_SET cxx_modules TYPE CXX_MODULES
     BASE_DIRS                              # 配置BASE_DIRS，用于组织构建输出目录，以便构建不同目录中(同名的)模块文件.
         #${MODULE_LIB_DIR1}

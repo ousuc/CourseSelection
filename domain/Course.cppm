@@ -1,6 +1,6 @@
-export module TeachingTask;
+export module course;
 import std;
-using std::sting;
+using std::string;
 export class Course {
 public:
     Course(string courseId, string name, float credits);
