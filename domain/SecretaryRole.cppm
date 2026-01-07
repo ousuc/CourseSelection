@@ -1,20 +1,17 @@
-export module SecretaryRole;
+export module secretaryRole;
 import std;
-import Role;
-import TaskInfo;
+import role;
+using std::string;
 
 export class SecretaryRole: public Role{
 public:
-    SecretaryRole(string id,string name,string gender, string department);
+    SecretaryRole(string id,string name,string gender);
     virtual string getRoleType()override;
 
-private:
-
-    string department;      // 所属院系
 };
 
-SecretaryRole::SecretaryRole(string id,string name,string gender, string department)
-:Role(id,name,gender),department(department)
+SecretaryRole::SecretaryRole(string id,string name,string gender)
+:Role(id,name,gender)
 {}
 string SecretaryRole::getRoleType(){
     return std::format("secretary");

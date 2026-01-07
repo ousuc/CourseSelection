@@ -1,5 +1,6 @@
-export module Role;
+export module role;
 import std;
+using std::string;
 export class Role{
 public:
     Role(string id,string name,string gender);
@@ -12,7 +13,6 @@ private:
     string id;
     string name;
     string gender;
-    string department;      // 所属院系
 };
 
 Role::Role(string id,string name, string gender)
