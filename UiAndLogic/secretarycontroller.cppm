@@ -6,6 +6,7 @@ export import teacherRole;;
 export import secretaryRole;
 export import course;
 export import teachingTask;
+export import DataTypes;
 
 export import DataBase;
 export import std;
