@@ -16,6 +16,7 @@ public:
 
     bool addStudentToTask(const std::string& taskId,const std::string& studentId);
     bool assignTeacherToTask(const std::string& taskId, const std::string& teacherId);
+    void show();
 private:
     DataBroker* db;
     const std::string& tableName;
@@ -23,6 +24,15 @@ private:
 TeachingTaskBroker::~TeachingTaskBroker()
 {
 
+}
+
+void TeachingTaskBroker::show()
+{
+    std::string sql = "select * from teaching_tasks";
+
+    auto&& res = db->executeSQL(sql);
+    db->selectPrint(res);
+    db->clear(res);
 }
 
 TeachingTaskBroker::TeachingTaskBroker(DataBroker* db):
@@ -48,11 +58,15 @@ bool TeachingTaskBroker::saveTask(TeachingTask* teachingTask)
 TeachingTask* TeachingTaskBroker::findTaskById(const std::string& id)
 {
     // todo ： 后期修复db类中容易被攻击的函数pgexec
-    std::string sql = "select * from teaching_tasks where id ='"+ id + "'";
+    std::string sql = "select * from teaching_tasks where task_id ='"+ id + "'";
 
     // 执行这个sql语句
     auto res = db->executeSQL(sql);
-
+    if (PQntuples(res) <= 0)    {
+        std::println("任务为空？");
+        db->clear(res);
+        return nullptr;
+    }
     // 检测查询出来的状态如何
     if (PQresultStatus(res) != PGRES_TUPLES_OK) {
         std::cerr << "查询失败"<< std::endl;

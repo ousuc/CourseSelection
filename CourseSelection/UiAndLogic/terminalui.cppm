@@ -19,6 +19,7 @@ using std::endl;
 
 export class TerminalUI {
 public:
+    friend class MainController;
     TerminalUI(MainController* mc);
     void showMainMenu();
     void showStudentMenu(const string& studentId);
@@ -47,12 +48,27 @@ void TerminalUI::showMainMenu() {
     switch (choice) {
         case 1: {
             string studentId = InputHelper::getNoEmptyInput("请输入学生ID：");
-            showStudentMenu(studentId);
+            if(mainController->sBroker->findStudentById(studentId))
+            {
+                showStudentMenu(studentId);
+            }else{
+                std::println("没有找到对应的学生！");
+                std::system("read -n 1 -s -p \"按任意键继续...\"");
+                showMainMenu();
+            }
+
             break;
         }
         case 2: {
             string teacherId = InputHelper::getNoEmptyInput("请输入教师ID：");
-            showTeacherMenu(teacherId);
+            if(mainController->sBroker->findStudentById(teacherId))
+            {
+                showTeacherMenu(teacherId);
+            }else{
+                std::println("没有找到对应的老师！");
+                std::system("read -n 1 -s -p \"按任意键继续...\"");
+                showMainMenu();
+            }
             break;
         }
         // 删除秘书
@@ -75,7 +91,8 @@ void TerminalUI::showStudentMenu(const string& studentId) {
     print("2. 查看已选课程/任务\n");
     print("3. 选课\n");
     print("4. 退课\n");
-    print("5. 查看成绩/GPA\n");
+    // 暂时丢弃查看成绩功能
+//    print("5. 查看成绩/GPA\n");
     print("0. 返回主菜单\n");
     print("======================================================================\n");
 
@@ -84,6 +101,7 @@ void TerminalUI::showStudentMenu(const string& studentId) {
     try {
         // todo : 等待实现的代码
         mainController->executeStudentCommand(choice, studentId);
+        std::system("read -n 1 -s -p \"按任意键继续...\"");
     } catch (const std::exception& e) {
         displayError(e.what());
     }
@@ -106,6 +124,7 @@ void TerminalUI::showTeacherMenu(const string& teacherId) {
     try {
         //需要实现
         mainController->executeTeacherCommand(choice, teacherId);
+        std::system("read -n 1 -s -p \"按任意键继续...\"");
     } catch (const std::exception& e) {
         displayError(e.what());
     }

@@ -43,6 +43,7 @@ bool TeacherBroker::inputStudentGrade(const std::string& teacherId,
         "AND teacher_id = '" + teacherId + "' LIMIT 1";
 
     auto taskRes = db->executeSQL(findTaskSql); 
+
     if (PQresultStatus(taskRes) != PGRES_TUPLES_OK || PQntuples(taskRes) == 0) {
         PQclear(taskRes);
         return false; // 该教师没有教授这门课
@@ -100,7 +101,11 @@ Teacher* TeacherBroker::findTeacherById(const std::string& id)
 
     // 执行这个sql语句
     auto res = db->executeSQL(sql);
-
+    if (PQntuples(res) <= 0)    {
+        std::println("查询结果为空");
+        db->clear(res);
+        return nullptr;
+    }
     // 检测查询出来的状态如何
     if (PQresultStatus(res) != PGRES_TUPLES_OK) {
         PQclear(res);

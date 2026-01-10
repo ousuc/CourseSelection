@@ -147,8 +147,11 @@ PGresult* DataBroker::executeSQL(const std::string& sql) {
     // 检查执行状态
     ExecStatusType status = PQresultStatus(res);
     if (status != PGRES_COMMAND_OK && status != PGRES_TUPLES_OK && status != PGRES_EMPTY_QUERY) {
-        PQclear(res);
-        throw std::runtime_error("SQL 执行失败");
+    // 核心：获取PostgreSQL的具体报错信息，这是排查问题的关键
+       std::string errorMsg = PQerrorMessage(connection); // conn是你的数据库连接（PGconn*类型）
+       PQclear(res);
+       // 抛出异常时携带具体错误信息，而非仅“SQL 执行失败”
+       throw std::runtime_error("SQL 执行失败：" + errorMsg);
     }
 
     return res;
