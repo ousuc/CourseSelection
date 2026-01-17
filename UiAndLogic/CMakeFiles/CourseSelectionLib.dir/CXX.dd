@@ -1,0 +1,34 @@
+ninja_dyndep_version = 1.0
+build UiAndLogic/CMakeFiles/CourseSelectionLib.dir/maincontroller.cppm.o | UiAndLogic/CMakeFiles/CourseSelectionLib.dir/maincontroller.gcm: dyndep | DataBase/CMakeFiles/DataBaseLib.dir/DataBase.gcm CMakeFiles/__CMAKE__CXX23@synth_f25bd30750c1.dir/7e51e9865fa1.bmi UiAndLogic/CMakeFiles/CourseSelectionLib.dir/maincontroller-coursecontroller.gcm UiAndLogic/CMakeFiles/CourseSelectionLib.dir/maincontroller-gradecontroller.gcm UiAndLogic/CMakeFiles/CourseSelectionLib.dir/maincontroller-secretarycontroller.gcm UiAndLogic/CMakeFiles/CourseSelectionLib.dir/maincontroller-studentcontroller.gcm UiAndLogic/CMakeFiles/CourseSelectionLib.dir/maincontroller-teachercontroller.gcm
+  restat = 1
+
+build UiAndLogic/CMakeFiles/CourseSelectionLib.dir/studentcontroller.cppm.o | UiAndLogic/CMakeFiles/CourseSelectionLib.dir/maincontroller-studentcontroller.gcm: dyndep | DataBase/CMakeFiles/DataBaseLib.dir/DataBase.gcm CMakeFiles/__CMAKE__CXX23@synth_f25bd30750c1.dir/7e51e9865fa1.bmi Domain/CMakeFiles/Domain.dir/secretaryRole.gcm Domain/CMakeFiles/Domain.dir/studentRole.gcm Domain/CMakeFiles/Domain.dir/teacherRole.gcm Domain/CMakeFiles/Domain.dir/role.gcm Domain/CMakeFiles/Domain.dir/teachingTask.gcm Domain/CMakeFiles/Domain.dir/course.gcm
+  restat = 1
+
+build UiAndLogic/CMakeFiles/CourseSelectionLib.dir/teachercontroller.cppm.o | UiAndLogic/CMakeFiles/CourseSelectionLib.dir/maincontroller-teachercontroller.gcm: dyndep | DataBase/CMakeFiles/DataBaseLib.dir/DataBase.gcm CMakeFiles/__CMAKE__CXX23@synth_f25bd30750c1.dir/7e51e9865fa1.bmi Domain/CMakeFiles/Domain.dir/secretaryRole.gcm Domain/CMakeFiles/Domain.dir/studentRole.gcm Domain/CMakeFiles/Domain.dir/teacherRole.gcm Domain/CMakeFiles/Domain.dir/role.gcm Domain/CMakeFiles/Domain.dir/teachingTask.gcm Domain/CMakeFiles/Domain.dir/course.gcm
+  restat = 1
+
+build UiAndLogic/CMakeFiles/CourseSelectionLib.dir/secretarycontroller.cppm.o | UiAndLogic/CMakeFiles/CourseSelectionLib.dir/maincontroller-secretarycontroller.gcm: dyndep | DataBase/CMakeFiles/DataBaseLib.dir/DataBase.gcm CMakeFiles/__CMAKE__CXX23@synth_f25bd30750c1.dir/7e51e9865fa1.bmi Domain/CMakeFiles/Domain.dir/secretaryRole.gcm Domain/CMakeFiles/Domain.dir/studentRole.gcm Domain/CMakeFiles/Domain.dir/teacherRole.gcm Domain/CMakeFiles/Domain.dir/role.gcm Domain/CMakeFiles/Domain.dir/teachingTask.gcm Domain/CMakeFiles/Domain.dir/course.gcm
+  restat = 1
+
+build UiAndLogic/CMakeFiles/CourseSelectionLib.dir/coursecontroller.cppm.o | UiAndLogic/CMakeFiles/CourseSelectionLib.dir/maincontroller-coursecontroller.gcm: dyndep | DataBase/CMakeFiles/DataBaseLib.dir/DataBase.gcm CMakeFiles/__CMAKE__CXX23@synth_f25bd30750c1.dir/7e51e9865fa1.bmi Domain/CMakeFiles/Domain.dir/secretaryRole.gcm Domain/CMakeFiles/Domain.dir/studentRole.gcm Domain/CMakeFiles/Domain.dir/teacherRole.gcm Domain/CMakeFiles/Domain.dir/role.gcm Domain/CMakeFiles/Domain.dir/teachingTask.gcm Domain/CMakeFiles/Domain.dir/course.gcm
+  restat = 1
+
+build UiAndLogic/CMakeFiles/CourseSelectionLib.dir/gradecontroller.cppm.o | UiAndLogic/CMakeFiles/CourseSelectionLib.dir/maincontroller-gradecontroller.gcm: dyndep | DataBase/CMakeFiles/DataBaseLib.dir/DataBase.gcm CMakeFiles/__CMAKE__CXX23@synth_f25bd30750c1.dir/7e51e9865fa1.bmi Domain/CMakeFiles/Domain.dir/secretaryRole.gcm Domain/CMakeFiles/Domain.dir/studentRole.gcm Domain/CMakeFiles/Domain.dir/teacherRole.gcm Domain/CMakeFiles/Domain.dir/role.gcm Domain/CMakeFiles/Domain.dir/teachingTask.gcm UiAndLogic/CMakeFiles/CourseSelectionLib.dir/DataTypes.gcm Domain/CMakeFiles/Domain.dir/course.gcm
+  restat = 1
+
+build UiAndLogic/CMakeFiles/CourseSelectionLib.dir/datatype.cppm.o | UiAndLogic/CMakeFiles/CourseSelectionLib.dir/DataTypes.gcm: dyndep | Domain/CMakeFiles/Domain.dir/secretaryRole.gcm Domain/CMakeFiles/Domain.dir/studentRole.gcm Domain/CMakeFiles/Domain.dir/teacherRole.gcm Domain/CMakeFiles/Domain.dir/role.gcm Domain/CMakeFiles/Domain.dir/teachingTask.gcm Domain/CMakeFiles/Domain.dir/course.gcm CMakeFiles/__CMAKE__CXX23@synth_f25bd30750c1.dir/7e51e9865fa1.bmi
+  restat = 1
+
+build UiAndLogic/CMakeFiles/CourseSelectionLib.dir/registrar.cppm.o | UiAndLogic/CMakeFiles/CourseSelectionLib.dir/registrar.gcm: dyndep | UiAndLogic/CMakeFiles/CourseSelectionLib.dir/maincontroller.gcm CMakeFiles/__CMAKE__CXX23@synth_f25bd30750c1.dir/7e51e9865fa1.bmi UiAndLogic/CMakeFiles/CourseSelectionLib.dir/terminalUI.gcm
+  restat = 1
+
+build UiAndLogic/CMakeFiles/CourseSelectionLib.dir/inputhelper.cppm.o | UiAndLogic/CMakeFiles/CourseSelectionLib.dir/InputHelper.gcm: dyndep | Domain/CMakeFiles/Domain.dir/secretaryRole.gcm Domain/CMakeFiles/Domain.dir/studentRole.gcm Domain/CMakeFiles/Domain.dir/teacherRole.gcm Domain/CMakeFiles/Domain.dir/role.gcm Domain/CMakeFiles/Domain.dir/teachingTask.gcm Domain/CMakeFiles/Domain.dir/course.gcm CMakeFiles/__CMAKE__CXX23@synth_f25bd30750c1.dir/7e51e9865fa1.bmi
+  restat = 1
+
+build UiAndLogic/CMakeFiles/CourseSelectionLib.dir/tableformatter.cppm.o | UiAndLogic/CMakeFiles/CourseSelectionLib.dir/TableFormatter.gcm: dyndep | Domain/CMakeFiles/Domain.dir/secretaryRole.gcm Domain/CMakeFiles/Domain.dir/studentRole.gcm Domain/CMakeFiles/Domain.dir/teacherRole.gcm Domain/CMakeFiles/Domain.dir/role.gcm Domain/CMakeFiles/Domain.dir/teachingTask.gcm Domain/CMakeFiles/Domain.dir/course.gcm CMakeFiles/__CMAKE__CXX23@synth_f25bd30750c1.dir/7e51e9865fa1.bmi
+  restat = 1
+
+build UiAndLogic/CMakeFiles/CourseSelectionLib.dir/terminalui.cppm.o | UiAndLogic/CMakeFiles/CourseSelectionLib.dir/terminalUI.gcm: dyndep | CMakeFiles/__CMAKE__CXX23@synth_f25bd30750c1.dir/7e51e9865fa1.bmi UiAndLogic/CMakeFiles/CourseSelectionLib.dir/InputHelper.gcm Domain/CMakeFiles/Domain.dir/secretaryRole.gcm Domain/CMakeFiles/Domain.dir/studentRole.gcm UiAndLogic/CMakeFiles/CourseSelectionLib.dir/TableFormatter.gcm Domain/CMakeFiles/Domain.dir/teacherRole.gcm Domain/CMakeFiles/Domain.dir/role.gcm Domain/CMakeFiles/Domain.dir/teachingTask.gcm Domain/CMakeFiles/Domain.dir/course.gcm UiAndLogic/CMakeFiles/CourseSelectionLib.dir/maincontroller.gcm
+  restat = 1
+

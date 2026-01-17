@@ -7,14 +7,16 @@ export import secretaryRole;
 export import course;
 export import teachingTask;
 import std;
-
+using std::cin;
 using std::vector;
 using std::string;
 
+// advice： 我推荐这个换成这个工具类，不过不换也行
 export class InputHelper {
-public
-    int getMenuChoice();
-    string getNoEmptyInput(const string& prompt);
+public:
+// 修改函数为静态方法
+    static int getMenuChoice();
+    static string getNoEmptyInput(const string& prompt);
     float getFloatInput(const string& prompt);
     bool getYesNoInput(const string& prompt);
 };

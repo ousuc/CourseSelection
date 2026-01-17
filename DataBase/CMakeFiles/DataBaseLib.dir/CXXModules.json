@@ -1,0 +1,186 @@
+{
+	"modules" : 
+	{
+		"DataBase" : 
+		{
+			"bmi" : "/home/ousuc/\u4f5c\u4e1a\u514b\u9686\u4ed3\u5e93/\u514b\u9686/\u65b0\u5efa\u6587\u4ef6\u5939/CourseSelection/DataBase/CMakeFiles/DataBaseLib.dir/DataBase.gcm",
+			"is-private" : false
+		},
+		"DataBase:CourseBroker" : 
+		{
+			"bmi" : "/home/ousuc/\u4f5c\u4e1a\u514b\u9686\u4ed3\u5e93/\u514b\u9686/\u65b0\u5efa\u6587\u4ef6\u5939/CourseSelection/DataBase/CMakeFiles/DataBaseLib.dir/DataBase-CourseBroker.gcm",
+			"is-private" : false
+		},
+		"DataBase:DataBroker" : 
+		{
+			"bmi" : "/home/ousuc/\u4f5c\u4e1a\u514b\u9686\u4ed3\u5e93/\u514b\u9686/\u65b0\u5efa\u6587\u4ef6\u5939/CourseSelection/DataBase/CMakeFiles/DataBaseLib.dir/DataBase-DataBroker.gcm",
+			"is-private" : false
+		},
+		"DataBase:StudentBroker" : 
+		{
+			"bmi" : "/home/ousuc/\u4f5c\u4e1a\u514b\u9686\u4ed3\u5e93/\u514b\u9686/\u65b0\u5efa\u6587\u4ef6\u5939/CourseSelection/DataBase/CMakeFiles/DataBaseLib.dir/DataBase-StudentBroker.gcm",
+			"is-private" : false
+		},
+		"DataBase:TeacherBroker" : 
+		{
+			"bmi" : "/home/ousuc/\u4f5c\u4e1a\u514b\u9686\u4ed3\u5e93/\u514b\u9686/\u65b0\u5efa\u6587\u4ef6\u5939/CourseSelection/DataBase/CMakeFiles/DataBaseLib.dir/DataBase-TeacherBroker.gcm",
+			"is-private" : false
+		},
+		"DataBase:TeachingTaskBroker" : 
+		{
+			"bmi" : "/home/ousuc/\u4f5c\u4e1a\u514b\u9686\u4ed3\u5e93/\u514b\u9686/\u65b0\u5efa\u6587\u4ef6\u5939/CourseSelection/DataBase/CMakeFiles/DataBaseLib.dir/DataBase-TeachingTaskBroker.gcm",
+			"is-private" : false
+		}
+	},
+	"references" : 
+	{
+		"DataBase" : 
+		{
+			"lookup-method" : "by-name",
+			"path" : "DataBase/CMakeFiles/DataBaseLib.dir/DataBase.gcm"
+		},
+		"DataBase:CourseBroker" : 
+		{
+			"lookup-method" : "by-name",
+			"path" : "DataBase/CMakeFiles/DataBaseLib.dir/DataBase-CourseBroker.gcm"
+		},
+		"DataBase:DataBroker" : 
+		{
+			"lookup-method" : "by-name",
+			"path" : "DataBase/CMakeFiles/DataBaseLib.dir/DataBase-DataBroker.gcm"
+		},
+		"DataBase:StudentBroker" : 
+		{
+			"lookup-method" : "by-name",
+			"path" : "DataBase/CMakeFiles/DataBaseLib.dir/DataBase-StudentBroker.gcm"
+		},
+		"DataBase:TeacherBroker" : 
+		{
+			"lookup-method" : "by-name",
+			"path" : "DataBase/CMakeFiles/DataBaseLib.dir/DataBase-TeacherBroker.gcm"
+		},
+		"DataBase:TeachingTaskBroker" : 
+		{
+			"lookup-method" : "by-name",
+			"path" : "DataBase/CMakeFiles/DataBaseLib.dir/DataBase-TeachingTaskBroker.gcm"
+		},
+		"course" : 
+		{
+			"lookup-method" : "by-name",
+			"path" : "Domain/CMakeFiles/Domain.dir/course.gcm"
+		},
+		"role" : 
+		{
+			"lookup-method" : "by-name",
+			"path" : "Domain/CMakeFiles/Domain.dir/role.gcm"
+		},
+		"secretaryRole" : 
+		{
+			"lookup-method" : "by-name",
+			"path" : "Domain/CMakeFiles/Domain.dir/secretaryRole.gcm"
+		},
+		"std" : 
+		{
+			"lookup-method" : "by-name",
+			"path" : "CMakeFiles/__CMAKE__CXX23@synth_f25bd30750c1.dir/7e51e9865fa1.bmi"
+		},
+		"std.compat" : 
+		{
+			"lookup-method" : "by-name",
+			"path" : "CMakeFiles/__CMAKE__CXX23@synth_f25bd30750c1.dir/f487656d2897.bmi"
+		},
+		"studentRole" : 
+		{
+			"lookup-method" : "by-name",
+			"path" : "Domain/CMakeFiles/Domain.dir/studentRole.gcm"
+		},
+		"teacherRole" : 
+		{
+			"lookup-method" : "by-name",
+			"path" : "Domain/CMakeFiles/Domain.dir/teacherRole.gcm"
+		},
+		"teachingTask" : 
+		{
+			"lookup-method" : "by-name",
+			"path" : "Domain/CMakeFiles/Domain.dir/teachingTask.gcm"
+		}
+	},
+	"usages" : 
+	{
+		"DataBase" : 
+		[
+			"DataBase:CourseBroker",
+			"DataBase:DataBroker",
+			"DataBase:StudentBroker",
+			"DataBase:TeacherBroker",
+			"DataBase:TeachingTaskBroker",
+			"course",
+			"role",
+			"std",
+			"studentRole",
+			"teacherRole",
+			"teachingTask"
+		],
+		"DataBase:CourseBroker" : 
+		[
+			"DataBase:DataBroker",
+			"course",
+			"std"
+		],
+		"DataBase:DataBroker" : 
+		[
+			"std"
+		],
+		"DataBase:StudentBroker" : 
+		[
+			"DataBase:DataBroker",
+			"role",
+			"std",
+			"studentRole"
+		],
+		"DataBase:TeacherBroker" : 
+		[
+			"DataBase:DataBroker",
+			"role",
+			"std",
+			"teacherRole"
+		],
+		"DataBase:TeachingTaskBroker" : 
+		[
+			"DataBase:DataBroker",
+			"std",
+			"teachingTask"
+		],
+		"course" : 
+		[
+			"std"
+		],
+		"role" : 
+		[
+			"std"
+		],
+		"secretaryRole" : 
+		[
+			"role",
+			"std"
+		],
+		"std.compat" : 
+		[
+			"std"
+		],
+		"studentRole" : 
+		[
+			"role",
+			"std"
+		],
+		"teacherRole" : 
+		[
+			"role",
+			"std"
+		],
+		"teachingTask" : 
+		[
+			"std"
+		]
+	}
+}

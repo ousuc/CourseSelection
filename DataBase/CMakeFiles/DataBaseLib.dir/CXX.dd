@@ -1,0 +1,19 @@
+ninja_dyndep_version = 1.0
+build DataBase/CMakeFiles/DataBaseLib.dir/DataBroker.cppm.o | DataBase/CMakeFiles/DataBaseLib.dir/DataBase-DataBroker.gcm: dyndep | CMakeFiles/__CMAKE__CXX23@synth_f25bd30750c1.dir/7e51e9865fa1.bmi
+  restat = 1
+
+build DataBase/CMakeFiles/DataBaseLib.dir/StudentBroker.cppm.o | DataBase/CMakeFiles/DataBaseLib.dir/DataBase-StudentBroker.gcm: dyndep | Domain/CMakeFiles/Domain.dir/studentRole.gcm DataBase/CMakeFiles/DataBaseLib.dir/DataBase-DataBroker.gcm CMakeFiles/__CMAKE__CXX23@synth_f25bd30750c1.dir/7e51e9865fa1.bmi
+  restat = 1
+
+build DataBase/CMakeFiles/DataBaseLib.dir/DataBase.cppm.o | DataBase/CMakeFiles/DataBaseLib.dir/DataBase.gcm: dyndep | DataBase/CMakeFiles/DataBaseLib.dir/DataBase-StudentBroker.gcm DataBase/CMakeFiles/DataBaseLib.dir/DataBase-TeacherBroker.gcm DataBase/CMakeFiles/DataBaseLib.dir/DataBase-DataBroker.gcm DataBase/CMakeFiles/DataBaseLib.dir/DataBase-CourseBroker.gcm DataBase/CMakeFiles/DataBaseLib.dir/DataBase-TeachingTaskBroker.gcm
+  restat = 1
+
+build DataBase/CMakeFiles/DataBaseLib.dir/TeacherBroker.cppm.o | DataBase/CMakeFiles/DataBaseLib.dir/DataBase-TeacherBroker.gcm: dyndep | Domain/CMakeFiles/Domain.dir/teacherRole.gcm DataBase/CMakeFiles/DataBaseLib.dir/DataBase-DataBroker.gcm CMakeFiles/__CMAKE__CXX23@synth_f25bd30750c1.dir/7e51e9865fa1.bmi
+  restat = 1
+
+build DataBase/CMakeFiles/DataBaseLib.dir/CourseBroker.cppm.o | DataBase/CMakeFiles/DataBaseLib.dir/DataBase-CourseBroker.gcm: dyndep | DataBase/CMakeFiles/DataBaseLib.dir/DataBase-DataBroker.gcm Domain/CMakeFiles/Domain.dir/course.gcm CMakeFiles/__CMAKE__CXX23@synth_f25bd30750c1.dir/7e51e9865fa1.bmi
+  restat = 1
+
+build DataBase/CMakeFiles/DataBaseLib.dir/TeachingTaskBroker.cppm.o | DataBase/CMakeFiles/DataBaseLib.dir/DataBase-TeachingTaskBroker.gcm: dyndep | Domain/CMakeFiles/Domain.dir/teachingTask.gcm DataBase/CMakeFiles/DataBaseLib.dir/DataBase-DataBroker.gcm CMakeFiles/__CMAKE__CXX23@synth_f25bd30750c1.dir/7e51e9865fa1.bmi
+  restat = 1
+

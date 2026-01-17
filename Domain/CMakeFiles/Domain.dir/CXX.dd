@@ -1,0 +1,19 @@
+ninja_dyndep_version = 1.0
+build Domain/CMakeFiles/Domain.dir/Course.cppm.o | Domain/CMakeFiles/Domain.dir/course.gcm: dyndep | CMakeFiles/__CMAKE__CXX23@synth_f25bd30750c1.dir/7e51e9865fa1.bmi
+  restat = 1
+
+build Domain/CMakeFiles/Domain.dir/Role.cppm.o | Domain/CMakeFiles/Domain.dir/role.gcm: dyndep | CMakeFiles/__CMAKE__CXX23@synth_f25bd30750c1.dir/7e51e9865fa1.bmi
+  restat = 1
+
+build Domain/CMakeFiles/Domain.dir/SecretaryRole.cppm.o | Domain/CMakeFiles/Domain.dir/secretaryRole.gcm: dyndep | Domain/CMakeFiles/Domain.dir/role.gcm CMakeFiles/__CMAKE__CXX23@synth_f25bd30750c1.dir/7e51e9865fa1.bmi
+  restat = 1
+
+build Domain/CMakeFiles/Domain.dir/StudentRole.cppm.o | Domain/CMakeFiles/Domain.dir/studentRole.gcm: dyndep | Domain/CMakeFiles/Domain.dir/role.gcm CMakeFiles/__CMAKE__CXX23@synth_f25bd30750c1.dir/7e51e9865fa1.bmi
+  restat = 1
+
+build Domain/CMakeFiles/Domain.dir/TeacherRole.cppm.o | Domain/CMakeFiles/Domain.dir/teacherRole.gcm: dyndep | Domain/CMakeFiles/Domain.dir/role.gcm CMakeFiles/__CMAKE__CXX23@synth_f25bd30750c1.dir/7e51e9865fa1.bmi
+  restat = 1
+
+build Domain/CMakeFiles/Domain.dir/TeachingTask.cppm.o | Domain/CMakeFiles/Domain.dir/teachingTask.gcm: dyndep | CMakeFiles/__CMAKE__CXX23@synth_f25bd30750c1.dir/7e51e9865fa1.bmi
+  restat = 1
+

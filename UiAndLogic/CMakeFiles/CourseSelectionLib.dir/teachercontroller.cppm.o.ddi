@@ -1,0 +1,48 @@
+{
+"rules": [
+{
+"primary-output": "UiAndLogic/CMakeFiles/CourseSelectionLib.dir/teachercontroller.cppm.o",
+"provides": [
+{
+"logical-name": "maincontroller:teachercontroller",
+"is-interface": true
+}
+],
+"requires": [
+{
+"logical-name": "DataBase"
+}
+,
+{
+"logical-name": "std"
+}
+,
+{
+"logical-name": "secretaryRole"
+}
+,
+{
+"logical-name": "studentRole"
+}
+,
+{
+"logical-name": "teacherRole"
+}
+,
+{
+"logical-name": "role"
+}
+,
+{
+"logical-name": "teachingTask"
+}
+,
+{
+"logical-name": "course"
+}
+]
+}
+],
+"version": 0,
+"revision": 0
+}

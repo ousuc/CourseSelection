@@ -1,0 +1,28 @@
+{
+"rules": [
+{
+"primary-output": "DataBase/CMakeFiles/DataBaseLib.dir/TeachingTaskBroker.cppm.o",
+"provides": [
+{
+"logical-name": "DataBase:TeachingTaskBroker",
+"is-interface": true
+}
+],
+"requires": [
+{
+"logical-name": "teachingTask"
+}
+,
+{
+"logical-name": "DataBase:DataBroker"
+}
+,
+{
+"logical-name": "std"
+}
+]
+}
+],
+"version": 0,
+"revision": 0
+}

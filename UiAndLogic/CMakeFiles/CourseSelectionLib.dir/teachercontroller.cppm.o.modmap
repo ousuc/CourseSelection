@@ -1,0 +1,10 @@
+$root .
+maincontroller:teachercontroller UiAndLogic/CMakeFiles/CourseSelectionLib.dir/maincontroller-teachercontroller.gcm
+DataBase DataBase/CMakeFiles/DataBaseLib.dir/DataBase.gcm
+std CMakeFiles/__CMAKE__CXX23@synth_f25bd30750c1.dir/7e51e9865fa1.bmi
+secretaryRole Domain/CMakeFiles/Domain.dir/secretaryRole.gcm
+studentRole Domain/CMakeFiles/Domain.dir/studentRole.gcm
+teacherRole Domain/CMakeFiles/Domain.dir/teacherRole.gcm
+role Domain/CMakeFiles/Domain.dir/role.gcm
+teachingTask Domain/CMakeFiles/Domain.dir/teachingTask.gcm
+course Domain/CMakeFiles/Domain.dir/course.gcm

@@ -1,0 +1,20 @@
+{
+"rules": [
+{
+"primary-output": "DataBase/CMakeFiles/DataBaseLib.dir/DataBroker.cppm.o",
+"provides": [
+{
+"logical-name": "DataBase:DataBroker",
+"is-interface": true
+}
+],
+"requires": [
+{
+"logical-name": "std"
+}
+]
+}
+],
+"version": 0,
+"revision": 0
+}

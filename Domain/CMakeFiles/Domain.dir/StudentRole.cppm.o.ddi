@@ -1,0 +1,24 @@
+{
+"rules": [
+{
+"primary-output": "Domain/CMakeFiles/Domain.dir/StudentRole.cppm.o",
+"provides": [
+{
+"logical-name": "studentRole",
+"is-interface": true
+}
+],
+"requires": [
+{
+"logical-name": "role"
+}
+,
+{
+"logical-name": "std"
+}
+]
+}
+],
+"version": 0,
+"revision": 0
+}

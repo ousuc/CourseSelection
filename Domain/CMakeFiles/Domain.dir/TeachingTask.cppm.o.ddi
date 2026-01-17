@@ -1,0 +1,20 @@
+{
+"rules": [
+{
+"primary-output": "Domain/CMakeFiles/Domain.dir/TeachingTask.cppm.o",
+"provides": [
+{
+"logical-name": "teachingTask",
+"is-interface": true
+}
+],
+"requires": [
+{
+"logical-name": "std"
+}
+]
+}
+],
+"version": 0,
+"revision": 0
+}

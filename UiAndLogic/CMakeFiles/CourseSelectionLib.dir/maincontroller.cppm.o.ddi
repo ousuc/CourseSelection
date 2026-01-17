@@ -1,0 +1,44 @@
+{
+"rules": [
+{
+"primary-output": "UiAndLogic/CMakeFiles/CourseSelectionLib.dir/maincontroller.cppm.o",
+"provides": [
+{
+"logical-name": "maincontroller",
+"is-interface": true
+}
+],
+"requires": [
+{
+"logical-name": "DataBase"
+}
+,
+{
+"logical-name": "std"
+}
+,
+{
+"logical-name": "maincontroller:coursecontroller"
+}
+,
+{
+"logical-name": "maincontroller:gradecontroller"
+}
+,
+{
+"logical-name": "maincontroller:secretarycontroller"
+}
+,
+{
+"logical-name": "maincontroller:studentcontroller"
+}
+,
+{
+"logical-name": "maincontroller:teachercontroller"
+}
+]
+}
+],
+"version": 0,
+"revision": 0
+}

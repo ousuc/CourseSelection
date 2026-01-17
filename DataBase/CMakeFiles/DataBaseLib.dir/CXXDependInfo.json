@@ -1,0 +1,90 @@
+{
+	"bmi-installation" : null,
+	"compiler-frontend-variant" : "GNU",
+	"compiler-id" : "GNU",
+	"compiler-simulate-id" : "",
+	"config" : "Debug",
+	"cxx-modules" : 
+	{
+		"DataBase/CMakeFiles/DataBaseLib.dir/CourseBroker.cppm.o" : 
+		{
+			"bmi-only" : false,
+			"destination" : null,
+			"name" : "CXX_MODULES",
+			"relative-directory" : "",
+			"source" : "/home/ousuc/\u4f5c\u4e1a\u514b\u9686\u4ed3\u5e93/\u514b\u9686/\u65b0\u5efa\u6587\u4ef6\u5939/CourseSelection/DataBase/CourseBroker.cppm",
+			"type" : "CXX_MODULES",
+			"visibility" : "PUBLIC"
+		},
+		"DataBase/CMakeFiles/DataBaseLib.dir/DataBase.cppm.o" : 
+		{
+			"bmi-only" : false,
+			"destination" : null,
+			"name" : "CXX_MODULES",
+			"relative-directory" : "",
+			"source" : "/home/ousuc/\u4f5c\u4e1a\u514b\u9686\u4ed3\u5e93/\u514b\u9686/\u65b0\u5efa\u6587\u4ef6\u5939/CourseSelection/DataBase/DataBase.cppm",
+			"type" : "CXX_MODULES",
+			"visibility" : "PUBLIC"
+		},
+		"DataBase/CMakeFiles/DataBaseLib.dir/DataBroker.cppm.o" : 
+		{
+			"bmi-only" : false,
+			"destination" : null,
+			"name" : "CXX_MODULES",
+			"relative-directory" : "",
+			"source" : "/home/ousuc/\u4f5c\u4e1a\u514b\u9686\u4ed3\u5e93/\u514b\u9686/\u65b0\u5efa\u6587\u4ef6\u5939/CourseSelection/DataBase/DataBroker.cppm",
+			"type" : "CXX_MODULES",
+			"visibility" : "PUBLIC"
+		},
+		"DataBase/CMakeFiles/DataBaseLib.dir/StudentBroker.cppm.o" : 
+		{
+			"bmi-only" : false,
+			"destination" : null,
+			"name" : "CXX_MODULES",
+			"relative-directory" : "",
+			"source" : "/home/ousuc/\u4f5c\u4e1a\u514b\u9686\u4ed3\u5e93/\u514b\u9686/\u65b0\u5efa\u6587\u4ef6\u5939/CourseSelection/DataBase/StudentBroker.cppm",
+			"type" : "CXX_MODULES",
+			"visibility" : "PUBLIC"
+		},
+		"DataBase/CMakeFiles/DataBaseLib.dir/TeacherBroker.cppm.o" : 
+		{
+			"bmi-only" : false,
+			"destination" : null,
+			"name" : "CXX_MODULES",
+			"relative-directory" : "",
+			"source" : "/home/ousuc/\u4f5c\u4e1a\u514b\u9686\u4ed3\u5e93/\u514b\u9686/\u65b0\u5efa\u6587\u4ef6\u5939/CourseSelection/DataBase/TeacherBroker.cppm",
+			"type" : "CXX_MODULES",
+			"visibility" : "PUBLIC"
+		},
+		"DataBase/CMakeFiles/DataBaseLib.dir/TeachingTaskBroker.cppm.o" : 
+		{
+			"bmi-only" : false,
+			"destination" : null,
+			"name" : "CXX_MODULES",
+			"relative-directory" : "",
+			"source" : "/home/ousuc/\u4f5c\u4e1a\u514b\u9686\u4ed3\u5e93/\u514b\u9686/\u65b0\u5efa\u6587\u4ef6\u5939/CourseSelection/DataBase/TeachingTaskBroker.cppm",
+			"type" : "CXX_MODULES",
+			"visibility" : "PUBLIC"
+		}
+	},
+	"database-info" : null,
+	"dir-cur-bld" : "/home/ousuc/\u4f5c\u4e1a\u514b\u9686\u4ed3\u5e93/\u514b\u9686/\u65b0\u5efa\u6587\u4ef6\u5939/CourseSelection/DataBase",
+	"dir-cur-src" : "/home/ousuc/\u4f5c\u4e1a\u514b\u9686\u4ed3\u5e93/\u514b\u9686/\u65b0\u5efa\u6587\u4ef6\u5939/CourseSelection/DataBase",
+	"dir-top-bld" : "/home/ousuc/\u4f5c\u4e1a\u514b\u9686\u4ed3\u5e93/\u514b\u9686/\u65b0\u5efa\u6587\u4ef6\u5939/CourseSelection",
+	"dir-top-src" : "/home/ousuc/\u4f5c\u4e1a\u514b\u9686\u4ed3\u5e93/\u514b\u9686/\u65b0\u5efa\u6587\u4ef6\u5939/CourseSelection",
+	"exports" : [],
+	"forward-modules-from-target-dirs" : [],
+	"include-dirs" : 
+	[
+		"DataBase",
+		"Domain"
+	],
+	"language" : "CXX",
+	"linked-target-dirs" : 
+	[
+		"/home/ousuc/\u4f5c\u4e1a\u514b\u9686\u4ed3\u5e93/\u514b\u9686/\u65b0\u5efa\u6587\u4ef6\u5939/CourseSelection/Domain/CMakeFiles/Domain.dir",
+		"/home/ousuc/\u4f5c\u4e1a\u514b\u9686\u4ed3\u5e93/\u514b\u9686/\u65b0\u5efa\u6587\u4ef6\u5939/CourseSelection/CMakeFiles/__CMAKE__CXX23@synth_f25bd30750c1.dir"
+	],
+	"module-dir" : "/home/ousuc/\u4f5c\u4e1a\u514b\u9686\u4ed3\u5e93/\u514b\u9686/\u65b0\u5efa\u6587\u4ef6\u5939/CourseSelection/DataBase/CMakeFiles/DataBaseLib.dir",
+	"sources" : {}
+}

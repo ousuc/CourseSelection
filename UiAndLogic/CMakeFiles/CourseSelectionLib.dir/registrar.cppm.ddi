@@ -1,0 +1,28 @@
+{
+"rules": [
+{
+"primary-output": "UiAndLogic/CMakeFiles/CourseSelectionLib.dir/registrar.cppm.o",
+"provides": [
+{
+"logical-name": "registrar",
+"is-interface": true
+}
+],
+"requires": [
+{
+"logical-name": "maincontroller"
+}
+,
+{
+"logical-name": "std"
+}
+,
+{
+"logical-name": "terminalUI"
+}
+]
+}
+],
+"version": 0,
+"revision": 0
+}

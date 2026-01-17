@@ -1,0 +1,7 @@
+$root .
+DataBase DataBase/CMakeFiles/DataBaseLib.dir/DataBase.gcm
+DataBase:StudentBroker DataBase/CMakeFiles/DataBaseLib.dir/DataBase-StudentBroker.gcm
+DataBase:TeacherBroker DataBase/CMakeFiles/DataBaseLib.dir/DataBase-TeacherBroker.gcm
+DataBase:DataBroker DataBase/CMakeFiles/DataBaseLib.dir/DataBase-DataBroker.gcm
+DataBase:CourseBroker DataBase/CMakeFiles/DataBaseLib.dir/DataBase-CourseBroker.gcm
+DataBase:TeachingTaskBroker DataBase/CMakeFiles/DataBaseLib.dir/DataBase-TeachingTaskBroker.gcm

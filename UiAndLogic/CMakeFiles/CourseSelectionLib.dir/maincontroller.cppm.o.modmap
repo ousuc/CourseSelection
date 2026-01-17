@@ -1,0 +1,9 @@
+$root .
+maincontroller UiAndLogic/CMakeFiles/CourseSelectionLib.dir/maincontroller.gcm
+DataBase DataBase/CMakeFiles/DataBaseLib.dir/DataBase.gcm
+std CMakeFiles/__CMAKE__CXX23@synth_f25bd30750c1.dir/7e51e9865fa1.bmi
+maincontroller:coursecontroller UiAndLogic/CMakeFiles/CourseSelectionLib.dir/maincontroller-coursecontroller.gcm
+maincontroller:gradecontroller UiAndLogic/CMakeFiles/CourseSelectionLib.dir/maincontroller-gradecontroller.gcm
+maincontroller:secretarycontroller UiAndLogic/CMakeFiles/CourseSelectionLib.dir/maincontroller-secretarycontroller.gcm
+maincontroller:studentcontroller UiAndLogic/CMakeFiles/CourseSelectionLib.dir/maincontroller-studentcontroller.gcm
+maincontroller:teachercontroller UiAndLogic/CMakeFiles/CourseSelectionLib.dir/maincontroller-teachercontroller.gcm

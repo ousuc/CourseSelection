@@ -1,0 +1,142 @@
+{
+	"bmi-installation" : null,
+	"compiler-frontend-variant" : "GNU",
+	"compiler-id" : "GNU",
+	"compiler-simulate-id" : "",
+	"config" : "Debug",
+	"cxx-modules" : 
+	{
+		"UiAndLogic/CMakeFiles/CourseSelectionLib.dir/coursecontroller.cppm.o" : 
+		{
+			"bmi-only" : false,
+			"destination" : null,
+			"name" : "CXX_MODULES",
+			"relative-directory" : "",
+			"source" : "/home/ousuc/\u4f5c\u4e1a\u514b\u9686\u4ed3\u5e93/\u514b\u9686/\u65b0\u5efa\u6587\u4ef6\u5939/CourseSelection/UiAndLogic/coursecontroller.cppm",
+			"type" : "CXX_MODULES",
+			"visibility" : "PUBLIC"
+		},
+		"UiAndLogic/CMakeFiles/CourseSelectionLib.dir/datatype.cppm.o" : 
+		{
+			"bmi-only" : false,
+			"destination" : null,
+			"name" : "CXX_MODULES",
+			"relative-directory" : "",
+			"source" : "/home/ousuc/\u4f5c\u4e1a\u514b\u9686\u4ed3\u5e93/\u514b\u9686/\u65b0\u5efa\u6587\u4ef6\u5939/CourseSelection/UiAndLogic/datatype.cppm",
+			"type" : "CXX_MODULES",
+			"visibility" : "PUBLIC"
+		},
+		"UiAndLogic/CMakeFiles/CourseSelectionLib.dir/gradecontroller.cppm.o" : 
+		{
+			"bmi-only" : false,
+			"destination" : null,
+			"name" : "CXX_MODULES",
+			"relative-directory" : "",
+			"source" : "/home/ousuc/\u4f5c\u4e1a\u514b\u9686\u4ed3\u5e93/\u514b\u9686/\u65b0\u5efa\u6587\u4ef6\u5939/CourseSelection/UiAndLogic/gradecontroller.cppm",
+			"type" : "CXX_MODULES",
+			"visibility" : "PUBLIC"
+		},
+		"UiAndLogic/CMakeFiles/CourseSelectionLib.dir/inputhelper.cppm.o" : 
+		{
+			"bmi-only" : false,
+			"destination" : null,
+			"name" : "CXX_MODULES",
+			"relative-directory" : "",
+			"source" : "/home/ousuc/\u4f5c\u4e1a\u514b\u9686\u4ed3\u5e93/\u514b\u9686/\u65b0\u5efa\u6587\u4ef6\u5939/CourseSelection/UiAndLogic/inputhelper.cppm",
+			"type" : "CXX_MODULES",
+			"visibility" : "PUBLIC"
+		},
+		"UiAndLogic/CMakeFiles/CourseSelectionLib.dir/maincontroller.cppm.o" : 
+		{
+			"bmi-only" : false,
+			"destination" : null,
+			"name" : "CXX_MODULES",
+			"relative-directory" : "",
+			"source" : "/home/ousuc/\u4f5c\u4e1a\u514b\u9686\u4ed3\u5e93/\u514b\u9686/\u65b0\u5efa\u6587\u4ef6\u5939/CourseSelection/UiAndLogic/maincontroller.cppm",
+			"type" : "CXX_MODULES",
+			"visibility" : "PUBLIC"
+		},
+		"UiAndLogic/CMakeFiles/CourseSelectionLib.dir/registrar.cppm.o" : 
+		{
+			"bmi-only" : false,
+			"destination" : null,
+			"name" : "CXX_MODULES",
+			"relative-directory" : "",
+			"source" : "/home/ousuc/\u4f5c\u4e1a\u514b\u9686\u4ed3\u5e93/\u514b\u9686/\u65b0\u5efa\u6587\u4ef6\u5939/CourseSelection/UiAndLogic/registrar.cppm",
+			"type" : "CXX_MODULES",
+			"visibility" : "PUBLIC"
+		},
+		"UiAndLogic/CMakeFiles/CourseSelectionLib.dir/secretarycontroller.cppm.o" : 
+		{
+			"bmi-only" : false,
+			"destination" : null,
+			"name" : "CXX_MODULES",
+			"relative-directory" : "",
+			"source" : "/home/ousuc/\u4f5c\u4e1a\u514b\u9686\u4ed3\u5e93/\u514b\u9686/\u65b0\u5efa\u6587\u4ef6\u5939/CourseSelection/UiAndLogic/secretarycontroller.cppm",
+			"type" : "CXX_MODULES",
+			"visibility" : "PUBLIC"
+		},
+		"UiAndLogic/CMakeFiles/CourseSelectionLib.dir/studentcontroller.cppm.o" : 
+		{
+			"bmi-only" : false,
+			"destination" : null,
+			"name" : "CXX_MODULES",
+			"relative-directory" : "",
+			"source" : "/home/ousuc/\u4f5c\u4e1a\u514b\u9686\u4ed3\u5e93/\u514b\u9686/\u65b0\u5efa\u6587\u4ef6\u5939/CourseSelection/UiAndLogic/studentcontroller.cppm",
+			"type" : "CXX_MODULES",
+			"visibility" : "PUBLIC"
+		},
+		"UiAndLogic/CMakeFiles/CourseSelectionLib.dir/tableformatter.cppm.o" : 
+		{
+			"bmi-only" : false,
+			"destination" : null,
+			"name" : "CXX_MODULES",
+			"relative-directory" : "",
+			"source" : "/home/ousuc/\u4f5c\u4e1a\u514b\u9686\u4ed3\u5e93/\u514b\u9686/\u65b0\u5efa\u6587\u4ef6\u5939/CourseSelection/UiAndLogic/tableformatter.cppm",
+			"type" : "CXX_MODULES",
+			"visibility" : "PUBLIC"
+		},
+		"UiAndLogic/CMakeFiles/CourseSelectionLib.dir/teachercontroller.cppm.o" : 
+		{
+			"bmi-only" : false,
+			"destination" : null,
+			"name" : "CXX_MODULES",
+			"relative-directory" : "",
+			"source" : "/home/ousuc/\u4f5c\u4e1a\u514b\u9686\u4ed3\u5e93/\u514b\u9686/\u65b0\u5efa\u6587\u4ef6\u5939/CourseSelection/UiAndLogic/teachercontroller.cppm",
+			"type" : "CXX_MODULES",
+			"visibility" : "PUBLIC"
+		},
+		"UiAndLogic/CMakeFiles/CourseSelectionLib.dir/terminalui.cppm.o" : 
+		{
+			"bmi-only" : false,
+			"destination" : null,
+			"name" : "CXX_MODULES",
+			"relative-directory" : "",
+			"source" : "/home/ousuc/\u4f5c\u4e1a\u514b\u9686\u4ed3\u5e93/\u514b\u9686/\u65b0\u5efa\u6587\u4ef6\u5939/CourseSelection/UiAndLogic/terminalui.cppm",
+			"type" : "CXX_MODULES",
+			"visibility" : "PUBLIC"
+		}
+	},
+	"database-info" : null,
+	"dir-cur-bld" : "/home/ousuc/\u4f5c\u4e1a\u514b\u9686\u4ed3\u5e93/\u514b\u9686/\u65b0\u5efa\u6587\u4ef6\u5939/CourseSelection/UiAndLogic",
+	"dir-cur-src" : "/home/ousuc/\u4f5c\u4e1a\u514b\u9686\u4ed3\u5e93/\u514b\u9686/\u65b0\u5efa\u6587\u4ef6\u5939/CourseSelection/UiAndLogic",
+	"dir-top-bld" : "/home/ousuc/\u4f5c\u4e1a\u514b\u9686\u4ed3\u5e93/\u514b\u9686/\u65b0\u5efa\u6587\u4ef6\u5939/CourseSelection",
+	"dir-top-src" : "/home/ousuc/\u4f5c\u4e1a\u514b\u9686\u4ed3\u5e93/\u514b\u9686/\u65b0\u5efa\u6587\u4ef6\u5939/CourseSelection",
+	"exports" : [],
+	"forward-modules-from-target-dirs" : [],
+	"include-dirs" : 
+	[
+		"UiAndLogic",
+		"Domain",
+		"DataBase"
+	],
+	"language" : "CXX",
+	"linked-target-dirs" : 
+	[
+		"/home/ousuc/\u4f5c\u4e1a\u514b\u9686\u4ed3\u5e93/\u514b\u9686/\u65b0\u5efa\u6587\u4ef6\u5939/CourseSelection/DataBase/CMakeFiles/DataBaseLib.dir",
+		"/home/ousuc/\u4f5c\u4e1a\u514b\u9686\u4ed3\u5e93/\u514b\u9686/\u65b0\u5efa\u6587\u4ef6\u5939/CourseSelection/CMakeFiles/__CMAKE__CXX23@synth_f25bd30750c1.dir",
+		"/home/ousuc/\u4f5c\u4e1a\u514b\u9686\u4ed3\u5e93/\u514b\u9686/\u65b0\u5efa\u6587\u4ef6\u5939/CourseSelection/Domain/CMakeFiles/Domain.dir"
+	],
+	"module-dir" : "/home/ousuc/\u4f5c\u4e1a\u514b\u9686\u4ed3\u5e93/\u514b\u9686/\u65b0\u5efa\u6587\u4ef6\u5939/CourseSelection/UiAndLogic/CMakeFiles/CourseSelectionLib.dir",
+	"sources" : {}
+}

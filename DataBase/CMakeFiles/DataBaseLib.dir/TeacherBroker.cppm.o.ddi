@@ -1,0 +1,28 @@
+{
+"rules": [
+{
+"primary-output": "DataBase/CMakeFiles/DataBaseLib.dir/TeacherBroker.cppm.o",
+"provides": [
+{
+"logical-name": "DataBase:TeacherBroker",
+"is-interface": true
+}
+],
+"requires": [
+{
+"logical-name": "teacherRole"
+}
+,
+{
+"logical-name": "DataBase:DataBroker"
+}
+,
+{
+"logical-name": "std"
+}
+]
+}
+],
+"version": 0,
+"revision": 0
+}

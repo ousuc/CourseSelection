@@ -1,0 +1,28 @@
+{
+"rules": [
+{
+"primary-output": "DataBase/CMakeFiles/DataBaseLib.dir/CourseBroker.cppm.o",
+"provides": [
+{
+"logical-name": "DataBase:CourseBroker",
+"is-interface": true
+}
+],
+"requires": [
+{
+"logical-name": "course"
+}
+,
+{
+"logical-name": "std"
+}
+,
+{
+"logical-name": "DataBase:DataBroker"
+}
+]
+}
+],
+"version": 0,
+"revision": 0
+}

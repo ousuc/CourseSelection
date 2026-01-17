@@ -1,10 +1,7 @@
-import std;
-
+import registrar;
 int main()
 {
-    std::cout << "hello, world" << std::endl;
-    std::println("hello, C++");
-
-    return 0;
+        auto&& system = Registrar::getInstance();
+        system.exec();
 }
 

@@ -1,0 +1,56 @@
+{
+"rules": [
+{
+"primary-output": "UiAndLogic/CMakeFiles/CourseSelectionLib.dir/terminalui.cppm.o",
+"provides": [
+{
+"logical-name": "terminalUI",
+"is-interface": true
+}
+],
+"requires": [
+{
+"logical-name": "std"
+}
+,
+{
+"logical-name": "InputHelper"
+}
+,
+{
+"logical-name": "secretaryRole"
+}
+,
+{
+"logical-name": "studentRole"
+}
+,
+{
+"logical-name": "TableFormatter"
+}
+,
+{
+"logical-name": "teacherRole"
+}
+,
+{
+"logical-name": "role"
+}
+,
+{
+"logical-name": "teachingTask"
+}
+,
+{
+"logical-name": "course"
+}
+,
+{
+"logical-name": "maincontroller"
+}
+]
+}
+],
+"version": 0,
+"revision": 0
+}

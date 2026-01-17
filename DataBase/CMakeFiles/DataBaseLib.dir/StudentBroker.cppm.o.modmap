@@ -1,0 +1,5 @@
+$root .
+DataBase:StudentBroker DataBase/CMakeFiles/DataBaseLib.dir/DataBase-StudentBroker.gcm
+studentRole Domain/CMakeFiles/Domain.dir/studentRole.gcm
+DataBase:DataBroker DataBase/CMakeFiles/DataBaseLib.dir/DataBase-DataBroker.gcm
+std CMakeFiles/__CMAKE__CXX23@synth_f25bd30750c1.dir/7e51e9865fa1.bmi

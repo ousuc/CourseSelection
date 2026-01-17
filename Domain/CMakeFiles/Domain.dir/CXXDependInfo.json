@@ -1,0 +1,88 @@
+{
+	"bmi-installation" : null,
+	"compiler-frontend-variant" : "GNU",
+	"compiler-id" : "GNU",
+	"compiler-simulate-id" : "",
+	"config" : "Debug",
+	"cxx-modules" : 
+	{
+		"Domain/CMakeFiles/Domain.dir/Course.cppm.o" : 
+		{
+			"bmi-only" : false,
+			"destination" : null,
+			"name" : "CXX_MODULES",
+			"relative-directory" : "",
+			"source" : "/home/ousuc/\u4f5c\u4e1a\u514b\u9686\u4ed3\u5e93/\u514b\u9686/\u65b0\u5efa\u6587\u4ef6\u5939/CourseSelection/Domain/Course.cppm",
+			"type" : "CXX_MODULES",
+			"visibility" : "PUBLIC"
+		},
+		"Domain/CMakeFiles/Domain.dir/Role.cppm.o" : 
+		{
+			"bmi-only" : false,
+			"destination" : null,
+			"name" : "CXX_MODULES",
+			"relative-directory" : "",
+			"source" : "/home/ousuc/\u4f5c\u4e1a\u514b\u9686\u4ed3\u5e93/\u514b\u9686/\u65b0\u5efa\u6587\u4ef6\u5939/CourseSelection/Domain/Role.cppm",
+			"type" : "CXX_MODULES",
+			"visibility" : "PUBLIC"
+		},
+		"Domain/CMakeFiles/Domain.dir/SecretaryRole.cppm.o" : 
+		{
+			"bmi-only" : false,
+			"destination" : null,
+			"name" : "CXX_MODULES",
+			"relative-directory" : "",
+			"source" : "/home/ousuc/\u4f5c\u4e1a\u514b\u9686\u4ed3\u5e93/\u514b\u9686/\u65b0\u5efa\u6587\u4ef6\u5939/CourseSelection/Domain/SecretaryRole.cppm",
+			"type" : "CXX_MODULES",
+			"visibility" : "PUBLIC"
+		},
+		"Domain/CMakeFiles/Domain.dir/StudentRole.cppm.o" : 
+		{
+			"bmi-only" : false,
+			"destination" : null,
+			"name" : "CXX_MODULES",
+			"relative-directory" : "",
+			"source" : "/home/ousuc/\u4f5c\u4e1a\u514b\u9686\u4ed3\u5e93/\u514b\u9686/\u65b0\u5efa\u6587\u4ef6\u5939/CourseSelection/Domain/StudentRole.cppm",
+			"type" : "CXX_MODULES",
+			"visibility" : "PUBLIC"
+		},
+		"Domain/CMakeFiles/Domain.dir/TeacherRole.cppm.o" : 
+		{
+			"bmi-only" : false,
+			"destination" : null,
+			"name" : "CXX_MODULES",
+			"relative-directory" : "",
+			"source" : "/home/ousuc/\u4f5c\u4e1a\u514b\u9686\u4ed3\u5e93/\u514b\u9686/\u65b0\u5efa\u6587\u4ef6\u5939/CourseSelection/Domain/TeacherRole.cppm",
+			"type" : "CXX_MODULES",
+			"visibility" : "PUBLIC"
+		},
+		"Domain/CMakeFiles/Domain.dir/TeachingTask.cppm.o" : 
+		{
+			"bmi-only" : false,
+			"destination" : null,
+			"name" : "CXX_MODULES",
+			"relative-directory" : "",
+			"source" : "/home/ousuc/\u4f5c\u4e1a\u514b\u9686\u4ed3\u5e93/\u514b\u9686/\u65b0\u5efa\u6587\u4ef6\u5939/CourseSelection/Domain/TeachingTask.cppm",
+			"type" : "CXX_MODULES",
+			"visibility" : "PUBLIC"
+		}
+	},
+	"database-info" : null,
+	"dir-cur-bld" : "/home/ousuc/\u4f5c\u4e1a\u514b\u9686\u4ed3\u5e93/\u514b\u9686/\u65b0\u5efa\u6587\u4ef6\u5939/CourseSelection/Domain",
+	"dir-cur-src" : "/home/ousuc/\u4f5c\u4e1a\u514b\u9686\u4ed3\u5e93/\u514b\u9686/\u65b0\u5efa\u6587\u4ef6\u5939/CourseSelection/Domain",
+	"dir-top-bld" : "/home/ousuc/\u4f5c\u4e1a\u514b\u9686\u4ed3\u5e93/\u514b\u9686/\u65b0\u5efa\u6587\u4ef6\u5939/CourseSelection",
+	"dir-top-src" : "/home/ousuc/\u4f5c\u4e1a\u514b\u9686\u4ed3\u5e93/\u514b\u9686/\u65b0\u5efa\u6587\u4ef6\u5939/CourseSelection",
+	"exports" : [],
+	"forward-modules-from-target-dirs" : [],
+	"include-dirs" : 
+	[
+		"Domain"
+	],
+	"language" : "CXX",
+	"linked-target-dirs" : 
+	[
+		"/home/ousuc/\u4f5c\u4e1a\u514b\u9686\u4ed3\u5e93/\u514b\u9686/\u65b0\u5efa\u6587\u4ef6\u5939/CourseSelection/CMakeFiles/__CMAKE__CXX23@synth_f25bd30750c1.dir"
+	],
+	"module-dir" : "/home/ousuc/\u4f5c\u4e1a\u514b\u9686\u4ed3\u5e93/\u514b\u9686/\u65b0\u5efa\u6587\u4ef6\u5939/CourseSelection/Domain/CMakeFiles/Domain.dir",
+	"sources" : {}
+}

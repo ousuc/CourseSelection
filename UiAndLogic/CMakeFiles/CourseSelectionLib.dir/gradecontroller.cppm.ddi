@@ -1,0 +1,52 @@
+{
+"rules": [
+{
+"primary-output": "UiAndLogic/CMakeFiles/CourseSelectionLib.dir/gradecontroller.cppm.o",
+"provides": [
+{
+"logical-name": "maincontroller:gradecontroller",
+"is-interface": true
+}
+],
+"requires": [
+{
+"logical-name": "std"
+}
+,
+{
+"logical-name": "secretaryRole"
+}
+,
+{
+"logical-name": "studentRole"
+}
+,
+{
+"logical-name": "teacherRole"
+}
+,
+{
+"logical-name": "role"
+}
+,
+{
+"logical-name": "teachingTask"
+}
+,
+{
+"logical-name": "DataTypes"
+}
+,
+{
+"logical-name": "DataBase"
+}
+,
+{
+"logical-name": "course"
+}
+]
+}
+],
+"version": 0,
+"revision": 0
+}

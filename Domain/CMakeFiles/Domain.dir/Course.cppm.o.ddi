@@ -1,0 +1,20 @@
+{
+"rules": [
+{
+"primary-output": "Domain/CMakeFiles/Domain.dir/Course.cppm.o",
+"provides": [
+{
+"logical-name": "course",
+"is-interface": true
+}
+],
+"requires": [
+{
+"logical-name": "std"
+}
+]
+}
+],
+"version": 0,
+"revision": 0
+}

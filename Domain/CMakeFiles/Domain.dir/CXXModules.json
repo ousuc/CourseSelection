@@ -1,0 +1,112 @@
+{
+	"modules" : 
+	{
+		"course" : 
+		{
+			"bmi" : "/home/ousuc/\u4f5c\u4e1a\u514b\u9686\u4ed3\u5e93/\u514b\u9686/\u65b0\u5efa\u6587\u4ef6\u5939/CourseSelection/Domain/CMakeFiles/Domain.dir/course.gcm",
+			"is-private" : false
+		},
+		"role" : 
+		{
+			"bmi" : "/home/ousuc/\u4f5c\u4e1a\u514b\u9686\u4ed3\u5e93/\u514b\u9686/\u65b0\u5efa\u6587\u4ef6\u5939/CourseSelection/Domain/CMakeFiles/Domain.dir/role.gcm",
+			"is-private" : false
+		},
+		"secretaryRole" : 
+		{
+			"bmi" : "/home/ousuc/\u4f5c\u4e1a\u514b\u9686\u4ed3\u5e93/\u514b\u9686/\u65b0\u5efa\u6587\u4ef6\u5939/CourseSelection/Domain/CMakeFiles/Domain.dir/secretaryRole.gcm",
+			"is-private" : false
+		},
+		"studentRole" : 
+		{
+			"bmi" : "/home/ousuc/\u4f5c\u4e1a\u514b\u9686\u4ed3\u5e93/\u514b\u9686/\u65b0\u5efa\u6587\u4ef6\u5939/CourseSelection/Domain/CMakeFiles/Domain.dir/studentRole.gcm",
+			"is-private" : false
+		},
+		"teacherRole" : 
+		{
+			"bmi" : "/home/ousuc/\u4f5c\u4e1a\u514b\u9686\u4ed3\u5e93/\u514b\u9686/\u65b0\u5efa\u6587\u4ef6\u5939/CourseSelection/Domain/CMakeFiles/Domain.dir/teacherRole.gcm",
+			"is-private" : false
+		},
+		"teachingTask" : 
+		{
+			"bmi" : "/home/ousuc/\u4f5c\u4e1a\u514b\u9686\u4ed3\u5e93/\u514b\u9686/\u65b0\u5efa\u6587\u4ef6\u5939/CourseSelection/Domain/CMakeFiles/Domain.dir/teachingTask.gcm",
+			"is-private" : false
+		}
+	},
+	"references" : 
+	{
+		"course" : 
+		{
+			"lookup-method" : "by-name",
+			"path" : "Domain/CMakeFiles/Domain.dir/course.gcm"
+		},
+		"role" : 
+		{
+			"lookup-method" : "by-name",
+			"path" : "Domain/CMakeFiles/Domain.dir/role.gcm"
+		},
+		"secretaryRole" : 
+		{
+			"lookup-method" : "by-name",
+			"path" : "Domain/CMakeFiles/Domain.dir/secretaryRole.gcm"
+		},
+		"std" : 
+		{
+			"lookup-method" : "by-name",
+			"path" : "CMakeFiles/__CMAKE__CXX23@synth_f25bd30750c1.dir/7e51e9865fa1.bmi"
+		},
+		"std.compat" : 
+		{
+			"lookup-method" : "by-name",
+			"path" : "CMakeFiles/__CMAKE__CXX23@synth_f25bd30750c1.dir/f487656d2897.bmi"
+		},
+		"studentRole" : 
+		{
+			"lookup-method" : "by-name",
+			"path" : "Domain/CMakeFiles/Domain.dir/studentRole.gcm"
+		},
+		"teacherRole" : 
+		{
+			"lookup-method" : "by-name",
+			"path" : "Domain/CMakeFiles/Domain.dir/teacherRole.gcm"
+		},
+		"teachingTask" : 
+		{
+			"lookup-method" : "by-name",
+			"path" : "Domain/CMakeFiles/Domain.dir/teachingTask.gcm"
+		}
+	},
+	"usages" : 
+	{
+		"course" : 
+		[
+			"std"
+		],
+		"role" : 
+		[
+			"std"
+		],
+		"secretaryRole" : 
+		[
+			"role",
+			"std"
+		],
+		"std.compat" : 
+		[
+			"std"
+		],
+		"studentRole" : 
+		[
+			"role",
+			"std"
+		],
+		"teacherRole" : 
+		[
+			"role",
+			"std"
+		],
+		"teachingTask" : 
+		[
+			"std"
+		]
+	}
+}

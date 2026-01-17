@@ -1,0 +1,44 @@
+{
+"rules": [
+{
+"primary-output": "UiAndLogic/CMakeFiles/CourseSelectionLib.dir/inputhelper.cppm.o",
+"provides": [
+{
+"logical-name": "InputHelper",
+"is-interface": true
+}
+],
+"requires": [
+{
+"logical-name": "secretaryRole"
+}
+,
+{
+"logical-name": "studentRole"
+}
+,
+{
+"logical-name": "teacherRole"
+}
+,
+{
+"logical-name": "role"
+}
+,
+{
+"logical-name": "teachingTask"
+}
+,
+{
+"logical-name": "course"
+}
+,
+{
+"logical-name": "std"
+}
+]
+}
+],
+"version": 0,
+"revision": 0
+}
