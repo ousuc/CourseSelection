@@ -38,6 +38,7 @@ TeacherController::TeacherController(TeacherBroker* tBroker, CourseBroker* cBrok
 
 TeacherRole* TeacherController::getTeacherProfile(const string& teacherId) {
     if (teacherId.empty()) throw std::invalid_argument("教师ID不能为空");
+    std::println("开始获取老师简介");
     TeacherRole* teacher = teacherBroker->findTeacherById(teacherId);
     if (!teacher) throw std::runtime_error("教师不存在");
     return teacher;

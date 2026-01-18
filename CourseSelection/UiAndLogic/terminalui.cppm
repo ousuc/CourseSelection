@@ -61,7 +61,7 @@ void TerminalUI::showMainMenu() {
         }
         case 2: {
             string teacherId = InputHelper::getNoEmptyInput("请输入教师ID：");
-            if(mainController->sBroker->findStudentById(teacherId))
+            if(mainController->tBroker->findTeacherById(teacherId))
             {
                 showTeacherMenu(teacherId);
             }else{
@@ -115,8 +115,8 @@ void TerminalUI::showTeacherMenu(const string& teacherId) {
     print("==================== 教师功能菜单 [{}] ====================\n",teacherId);
     print("1. 查看个人信息\n");
     print("2. 查看授课任务\n");
-    print("3. 录入学生成绩\n");
-    print("4. 查看任务学生名单\n");
+//    print("3. 录入学生成绩\n");
+    print("3. 查看任务学生名单\n");
     print("0. 返回主菜单\n");
     print("======================================================================\n");
 
