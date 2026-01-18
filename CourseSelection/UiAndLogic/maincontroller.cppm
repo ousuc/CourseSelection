@@ -65,11 +65,15 @@ switch(choice) {
         try{
             teacher = teacherController->getTeacherProfile(teacherId);
         }catch (std::exception& e){
-            std::println("{}",e.what());
+            std::println("{} 异常",e.what());
             break;
         }
         std::println("{}",teacher->getProfile());
         delete teacher;
+    case 2:
+        tBroker->printTeachingTasks(teacherId);
+    case 3:
+        tBroker->printTaskStudentsGrouped(teacherId);
     // case 2:
     // case 3:
     // case 4:

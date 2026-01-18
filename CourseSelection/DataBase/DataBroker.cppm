@@ -137,7 +137,7 @@ void DataBroker::commit() {
 }
 
 PGresult* DataBroker::executeSQL(const std::string& sql) {
-    std::println("执行sql语句");
+ //   std::println("执行sql语句");
     if (!connection) {
         throw std::runtime_error("没有建立连接无法执行sql语句");
     }
@@ -151,7 +151,7 @@ PGresult* DataBroker::executeSQL(const std::string& sql) {
        std::string errorMsg = PQerrorMessage(connection); // conn是你的数据库连接（PGconn*类型）
        PQclear(res);
        // 抛出异常时携带具体错误信息，而非仅“SQL 执行失败”
-       throw std::runtime_error("SQL 执行失败：" + errorMsg);
+       throw std::runtime_error("SQL 执行失败： 错误原因" + errorMsg);
     }
 
     return res;

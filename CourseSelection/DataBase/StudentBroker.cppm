@@ -99,25 +99,140 @@ bool StudentBroker::enrollInTask(const std::string& studentId, const std::string
     return true;
 }
 
-
 bool StudentBroker::dropInTask(const std::string& studentId, const std::string& taskId)
 {
-// 调用数据库执行SQL（使用db->executeSQL，与你原有查询逻辑保持一致）
-    std::string sql = "UPDATE teaching_tasks "
-                     "SET current_enrolled = current_enrolled - 1 "  // 退课：选课人数减1
-                     "WHERE task_id = '" + taskId + "' "              // 目标教学任务ID
-                     "  AND current_enrolled > 0;";                   // 校验：选课人数大于0，避免出现负数
+    std::cout << "开始执行退课操作 - 学生ID: " << studentId
+              << ", 任务ID: " << taskId << std::endl;
 
-    auto res = db->executeSQL(sql);
-    if (res == nullptr) {
-        db->clear(res);
+    try {
+        std::cout << "执行1" << std::endl;
+        // 第一步：检查教学任务是否存在
+        {
+            std::string sql = "SELECT 1 FROM teaching_tasks WHERE task_id = '" + taskId + "';";
+            auto result = db->executeSQL(sql);
+
+            if (!result) {
+                std::cerr << "错误：查询教学任务返回空结果" << std::endl;
+                return false;
+            }
+
+            ExecStatusType status = PQresultStatus(result);
+            if (status != PGRES_TUPLES_OK) {
+                std::cerr << "错误：查询教学任务失败，状态码: " << status << std::endl;
+                db->clear(result);
+                return false;
+            }
+
+            int rowCount = PQntuples(result);
+            db->clear(result);
+
+            if (rowCount == 0) {
+                std::cerr << "错误：教学任务不存在 - " << taskId << std::endl;
+                return false;
+            }
+        }
+        std::cout << "execute 2" << std::endl;
+
+        // 第二步：检查学生是否已选此课
+        bool hasEnrolled = false;
+        {
+            std::string sql = "SELECT id FROM grades WHERE student_id = '" + studentId
+                            + "' AND task_id = '" + taskId + "'";
+            auto result = db->executeSQL(sql);
+            std::println("------ print -------");
+            db->selectPrint(result);
+            std::println("--------------------");
+            if (!result) {
+                std::cerr << "错误：查询选课记录返回空结果" << std::endl;
+                return false;
+            }
+
+            ExecStatusType status = PQresultStatus(result);
+            if (status != PGRES_TUPLES_OK) {
+                std::cerr << "错误：查询选课记录失败，状态码: " << status << std::endl;
+                db->clear(result);
+                return false;
+            }
+
+            hasEnrolled = (PQntuples(result) > 0);
+            db->clear(result);
+        }
+
+        if (!hasEnrolled) {
+            std::cerr << "错误：学生未选择该课程" << std::endl;
+            return false;
+        }
+
+        std::cout << "验证通过，执行退课..." << std::endl;
+
+        // 第三步：删除成绩记录
+        int deletedRows = 0;
+        {
+            std::string sql = "DELETE FROM grades WHERE student_id = '" + studentId
+                            + "' AND task_id = '" + taskId + "'";
+
+            std::cout << "执行SQL: " << sql << std::endl;
+
+            auto result = db->executeSQL(sql);
+            if (!result) {
+                std::cerr << "错误：删除操作返回空结果" << std::endl;
+                return false;
+            }
+
+            ExecStatusType status = PQresultStatus(result);
+            if (status != PGRES_COMMAND_OK) {
+                std::cerr << "错误：删除操作失败，状态码: " << status << std::endl;
+                db->clear(result);
+                return false;
+            }
+
+            char* affectedStr = PQcmdTuples(result);
+            if (affectedStr) {
+                deletedRows = std::stoi(affectedStr);
+            }
+            db->clear(result);
+
+            std::cout << "删除成功，影响行数: " << deletedRows << std::endl;
+        }
+
+        if (deletedRows == 0) {
+            std::cerr << "警告：未删除任何记录" << std::endl;
+            return false;
+        }
+
+        // 第四步：更新选课人数
+        {
+            std::string sql = "UPDATE teaching_tasks "
+                            "SET current_enrolled = current_enrolled - 1 "
+                            "WHERE task_id = '" + taskId + "' "
+                            "AND current_enrolled > 0 "
+                            "RETURNING current_enrolled";
+
+            std::cout << "执行SQL: " << sql << std::endl;
+
+            auto result = db->executeSQL(sql);
+            if (!result) {
+                std::cerr << "警告：更新选课人数返回空结果" << std::endl;
+                // 即使更新失败，删除操作已成功，所以返回true
+                return true;
+            }
+
+            ExecStatusType status = PQresultStatus(result);
+            if (status == PGRES_TUPLES_OK && PQntuples(result) > 0) {
+                std::string newCount = PQgetvalue(result, 0, 0);
+                std::cout << "更新成功，当前选课人数: " << newCount << std::endl;
+            }
+            db->clear(result);
+        }
+
+        std::cout << "退课操作完成" << std::endl;
+        return true;
+
+    } catch (const std::exception& e) {
+        std::cerr << "异常发生: " << e.what() << std::endl;
         return false;
     }
-    db->clear(res);
-   return true;
 }
-
-
 // 构造函数默认将这个表名设置为students
 StudentBroker::StudentBroker(DataBroker* db):
         db(db),tableName("students")
@@ -232,6 +347,6 @@ bool StudentBroker::saveStudent(StudentRole* student)
 // 已经弃用 上层接口没有实现
 double StudentBroker::calculateGPA(const std::string& studentId)
 {
-
+    return 0;
     // todo: 计算GPA 可能会弃用
 }

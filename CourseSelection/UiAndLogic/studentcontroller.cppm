@@ -124,7 +124,8 @@ bool StudentController::dropStudent(const string& studentId, const string& taskI
     TeachingTask* task = taskBroker->findTaskById(taskId);
     if (!task) throw std::runtime_error("授课任务不存在");
 
-    if (!student->hasTask(taskId)) throw std::runtime_error("未选该任务，无法退课");
+// 由于这个刚开始初始化数据库的时候这个对象肯定没有这个任务所以删除对应对象
+ //   if (!student->hasTask(taskId)) throw std::runtime_error("未选该任务，无法退课");
 
     studentBroker->dropInTask(studentId,taskId);
     // bool taskOk = task->removeStudent(studentId);
