@@ -1,0 +1,308 @@
+name: Notify Fork Owners by Email
+
+on:
+  create:
+    branches: ['*']
+  delete:
+    branches: ['*']
+
+jobs:
+  send-email-notification:
+    runs-on: ubuntu-latest
+    if: github.event.ref_type == 'branch'
+    
+    steps:
+      - name: 检查并跳过特定分支
+        id: check-branch
+        run: |
+          BRANCH_NAME="${{ github.event.ref }}"
+          CLEAN_BRANCH="${BRANCH_NAME#refs/heads/}"
+          
+          # 要跳过的分支模式
+          SKIP_PATTERNS="gh-pages dependabot renovate test-"
+          
+          for pattern in $SKIP_PATTERNS; do
+            if [[ "$CLEAN_BRANCH" == *"$pattern"* ]]; then
+              echo "skip=true" >> $GITHUB_OUTPUT
+              echo "branch_name=$CLEAN_BRANCH" >> $GITHUB_OUTPUT
+              echo "event_type=${{ github.event_name }}" >> $GITHUB_OUTPUT
+              echo "已跳过分支: $CLEAN_BRANCH (匹配: $pattern)"
+              exit 0
+            fi
+          done
+          
+          echo "skip=false" >> $GITHUB_OUTPUT
+          echo "branch_name=$CLEAN_BRANCH" >> $GITHUB_OUTPUT
+          echo "event_type=${{ github.event_name }}" >> $GITHUB_OUTPUT
+          echo "处理分支: $CLEAN_BRANCH"
+      
+      - name: 获取所有 fork 仓库信息
+        if: steps.check-branch.outputs.skip == 'false'
+        id: get-forks
+        uses: actions/github-script@v7
+        with:
+          script: |
+            console.log('开始获取 fork 仓库信息...');
+            
+            try {
+              // 获取 fork 仓库列表
+              const forks = await github.paginate(
+                github.rest.repos.listForks,
+                {
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  per_page: 100
+                }
+              );
+              
+              const forkOwners = [...new Set(forks.map(fork => fork.owner.login))];
+              console.log(`找到 ${forkOwners.length} 个 fork 所有者:`, forkOwners);
+              
+              // 将结果存储在文件中供后续步骤使用
+              const fs = require('fs');
+              const filePath = `${process.env.GITHUB_WORKSPACE}/fork-owners.json`;
+              fs.writeFileSync(filePath, JSON.stringify(forkOwners));
+              
+              // 保存计数
+              const summary = {
+                total_forks: forks.length,
+                unique_owners: forkOwners.length,
+                timestamp: new Date().toISOString()
+              };
+              fs.writeFileSync(`${process.env.GITHUB_WORKSPACE}/summary.json`, JSON.stringify(summary));
+              
+              console.log('数据已保存到文件');
+              return forkOwners;
+              
+            } catch (error) {
+              console.error('获取 fork 仓库失败:', error.message);
+              // 返回空数组而不是失败
+              return [];
+            }
+      
+      - name: 安装依赖
+        if: steps.check-branch.outputs.skip == 'false'
+        run: |
+          npm init -y --silent
+          npm install nodemailer @octokit/rest
+          echo "依赖安装完成"
+      
+      - name: 发送邮件通知
+        if: steps.check-branch.outputs.skip == 'false'
+        env:
+          SMTP_HOST: ${{ secrets.SMTP_HOST }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT }}
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASS: ${{ secrets.SMTP_PASS }}
+          PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
+          EVENT_TYPE: ${{ steps.check-branch.outputs.event_type }}
+          BRANCH_NAME: ${{ steps.check-branch.outputs.branch_name }}
+          REPOSITORY: ${{ github.repository }}
+          REPO_OWNER: ${{ github.repository_owner }}
+          REPO_URL: https://github.com/${{ github.repository }}
+        run: |
+          # 创建邮件发送脚本 - 使用 EOF 但不带单引号
+          cat > send-notifications.js << 'EOF'
+          const nodemailer = require('nodemailer');
+          const { Octokit } = require('@octokit/rest');
+          const fs = require('fs');
+          const path = require('path');
+          
+          // 配置
+          const config = {
+            smtp: {
+              host: process.env.SMTP_HOST,
+              port: parseInt(process.env.SMTP_PORT) || 587,
+              secure: false,
+              auth: {
+                user: process.env.SMTP_USER,
+                pass: process.env.SMTP_PASS
+              },
+              tls: { rejectUnauthorized: false }
+            },
+            github: {
+              token: process.env.PAT_TOKEN
+            },
+            event: {
+              type: process.env.EVENT_TYPE,
+              branch: process.env.BRANCH_NAME,
+              repository: process.env.REPOSITORY,
+              repoOwner: process.env.REPO_OWNER,
+              repoUrl: process.env.REPO_URL
+            }
+          };
+          
+          // 读取 fork 所有者列表
+          let forkOwners = [];
+          try {
+            forkOwners = JSON.parse(fs.readFileSync(path.join(process.env.GITHUB_WORKSPACE, 'fork-owners.json'), 'utf8'));
+          } catch (error) {
+            console.log('无法读取 fork 所有者列表:', error.message);
+            process.exit(1);
+          }
+          
+          console.log(`需要通知 ${forkOwners.length} 个 fork 所有者`);
+          
+          // 创建邮件传输器
+          const transporter = nodemailer.createTransport(config.smtp);
+          
+          // 创建 GitHub 客户端
+          const octokit = new Octokit({ auth: config.github.token });
+          
+          // 获取用户邮箱
+          async function getUserEmail(username) {
+            try {
+              const { data: user } = await octokit.users.getByUsername({ username });
+              
+              if (user.email) {
+                return user.email;
+              }
+              
+              return null;
+            } catch (error) {
+              console.log(`获取用户 ${username} 信息失败:`, error.message);
+              return null;
+            }
+          }
+          
+          // 生成邮件内容
+          function createEmailContent(username, email) {
+            const isCreate = config.event.type === 'create';
+            const actionText = isCreate ? '创建' : '删除';
+            const subject = isCreate 
+              ? `🚀 新分支创建通知: ${config.event.branch}` 
+              : `🗑️ 分支删除通知: ${config.event.branch}`;
+            
+            const html = `
+          <!DOCTYPE html>
+          <html>
+          <head>
+            <meta charset="utf-8">
+            <title>GitHub 分支变更通知</title>
+          </head>
+          <body>
+            <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
+              <div style="background: ${isCreate ? '#2ea44f' : '#d73a49'}; color: white; padding: 20px; text-align: center; border-radius: 5px;">
+                <h1>${isCreate ? '🚀 新分支已创建' : '🗑️ 分支已删除'}</h1>
+                <p>GitHub 仓库分支变更通知</p>
+              </div>
+              
+              <div style="padding: 20px;">
+                <p>尊敬的 <strong>${username}</strong>，您好！</p>
+                
+                <p>您关注的 GitHub 仓库 <strong>${config.event.repository}</strong> 有新的分支变更：</p>
+                
+                <div style="background: #f6f8fa; border: 1px solid #e1e4e8; border-radius: 5px; padding: 15px; margin: 20px 0; font-family: monospace;">
+                  <strong>${actionText}的分支：</strong><br>
+                  ${config.event.branch}
+                </div>
+                
+                ${isCreate 
+                  ? '<p>此分支包含了新的功能或修复，建议您检查是否需要同步到您的 fork 仓库。</p>'
+                  : '<p>此分支已被删除，建议您检查并清理 fork 仓库中的对应分支。</p>'
+                }
+                
+                <p><strong>详细信息：</strong></p>
+                <ul>
+                  <li>仓库：${config.event.repository}</li>
+                  <li>分支：${config.event.branch}</li>
+                  <li>操作：${actionText}</li>
+                  <li>时间：${new Date().toLocaleString('zh-CN')}</li>
+                </ul>
+                
+                <a href="${config.event.repoUrl}${isCreate ? '/tree/' + encodeURIComponent(config.event.branch) : ''}" 
+                   style="display: inline-block; background: #0366d6; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; margin-top: 20px;">
+                  ${isCreate ? '查看新分支' : '查看仓库'}
+                </a>
+              </div>
+              
+              <div style="background: #f6f8fa; padding: 20px; text-align: center; color: #6a737d; font-size: 12px; border-top: 1px solid #eaecef;">
+                <p>这是一封自动发送的 GitHub Actions 通知邮件</p>
+                <p>发件人：${config.event.repoOwner} | 系统通知请勿回复</p>
+              </div>
+            </div>
+          </body>
+          </html>
+            `;
+            
+            const text = `
+          GitHub 分支变更通知
+          
+          尊敬的 ${username}，您好！
+          
+          您关注的 GitHub 仓库 ${config.event.repository} 已${actionText}分支：
+          分支名称：${config.event.branch}
+          
+          ${isCreate 
+            ? '此分支包含了新的功能或修复，建议您检查是否需要同步到您的 fork 仓库。'
+            : '此分支已被删除，建议您检查并清理 fork 仓库中的对应分支。'
+          }
+          
+          详细信息：
+          仓库：${config.event.repository}
+          分支：${config.event.branch}
+          操作：${actionText}
+          时间：${new Date().toLocaleString('zh-CN')}
+          
+          链接：${config.event.repoUrl}${isCreate ? '/tree/' + config.event.branch : ''}
+          
+          -- 
+          这是自动发送的 GitHub Actions 通知
+            `;
+            
+            return { subject, html, text };
+          }
+          
+          // 主函数：发送邮件
+          async function sendNotifications() {
+            console.log('开始发送邮件通知...');
+            
+            for (const username of forkOwners) {
+              try {
+                console.log(`处理用户: ${username}`);
+                
+                // 1. 获取用户邮箱
+                const email = await getUserEmail(username);
+                
+                if (!email) {
+                  console.log(`  跳过 ${username}，没有找到邮箱地址`);
+                  continue;
+                }
+                
+                // 2. 创建邮件内容
+                const { subject, html, text } = createEmailContent(username, email);
+                
+                // 3. 发送邮件
+                const mailOptions = {
+                  from: `"${config.event.repoOwner} - GitHub Notifications" <${config.smtp.auth.user}>`,
+                  to: email,
+                  subject: subject,
+                  html: html,
+                  text: text
+                };
+                
+                const info = await transporter.sendMail(mailOptions);
+                console.log(`  邮件已发送至: ${email}`);
+                
+              } catch (error) {
+                console.log(`  处理 ${username} 时出错:`, error.message);
+              }
+            }
+            
+            console.log('邮件发送任务完成！');
+          }
+          
+          // 执行
+          sendNotifications().catch(console.error);
+          EOF
+                    
+                    # 运行邮件发送脚本
+                    echo "开始发送邮件通知..."
+                    node send-notifications.js
+                
+      - name: 显示执行结果
+        if: always()
+        run: |
+          echo "通知执行完成"
+          echo "事件类型: ${{ steps.check-branch.outputs.event_type }}"
+          echo "分支名称: ${{ steps.check-branch.outputs.branch_name }}"
